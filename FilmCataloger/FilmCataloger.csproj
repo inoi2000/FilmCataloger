@@ -69,11 +69,59 @@
     <Compile Include="Model\Profession.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\AdminForms\AdminMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AdminForms\AdminMainForm.Designer.cs">
+      <DependentUpon>AdminMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AdminForms\ChangeFilmInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AdminForms\ChangeFilmInfoForm.Designer.cs">
+      <DependentUpon>ChangeFilmInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AdminForms\ChangePersonInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AdminForms\ChangePersonInfoForm.Designer.cs">
+      <DependentUpon>ChangePersonInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AdminForms\CreateFilmForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AdminForms\CreateFilmForm.Designer.cs">
+      <DependentUpon>CreateFilmForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AdminForms\CreatePersonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AdminForms\CreatePersonForm.Designer.cs">
+      <DependentUpon>CreatePersonForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserForms\FilmForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UserForms\FilmForm.Designer.cs">
+      <DependentUpon>FilmForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserForms\UserMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UserForms\UserMainForm.Designer.cs">
+      <DependentUpon>UserMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserForms\PersonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UserForms\PersonForm.Designer.cs">
+      <DependentUpon>PersonForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Migrations\202302121102060_InitialCreate.resx">
       <DependentUpon>202302121102060_InitialCreate.cs</DependentUpon>
