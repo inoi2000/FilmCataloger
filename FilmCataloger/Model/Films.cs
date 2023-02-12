@@ -21,5 +21,6 @@ namespace FilmCataloger.Model
         public ICollection<Genres> Genres { get; set; }
         public ICollection<Persons> Persons  { get; set; }
 
+        public ICollection<Countries> Countries { get; set; }
     }
 }

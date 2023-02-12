@@ -56,11 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\202302121102060_InitialCreate.cs" />
-    <Compile Include="Migrations\202302121102060_InitialCreate.designer.cs">
-      <DependentUpon>202302121102060_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202302121453563_InitialCreate.cs" />
+    <Compile Include="Migrations\202302121453563_InitialCreate.designer.cs">
+      <DependentUpon>202302121453563_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\Countries.cs" />
     <Compile Include="Model\FilmCatalogerDbContext.cs" />
     <Compile Include="Model\Films.cs" />
     <Compile Include="Model\FurtherInfo.cs" />
@@ -123,8 +124,8 @@
     <Compile Include="View\UserForms\PersonForm.Designer.cs">
       <DependentUpon>PersonForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Migrations\202302121102060_InitialCreate.resx">
-      <DependentUpon>202302121102060_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202302121453563_InitialCreate.resx">
+      <DependentUpon>202302121453563_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -135,6 +136,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\UserForms\UserMainForm.resx">
+      <DependentUpon>UserMainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

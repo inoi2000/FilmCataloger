@@ -23,12 +23,21 @@
                 .Index(t => t.Films_Id);
             
             CreateTable(
+                "dbo.Countries",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
                 "dbo.FurtherInfoes",
                 c => new
                     {
                         Id = c.Int(nullable: false),
                         Description = c.String(),
-                        AgrLimit = c.Int(nullable: false),
+                        AgeLimit = c.Int(nullable: false),
                         Fees = c.Decimal(nullable: false, precision: 18, scale: 2),
                     })
                 .PrimaryKey(t => t.Id)
@@ -64,6 +73,19 @@
                         Name = c.String(),
                     })
                 .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.CountriesFilms",
+                c => new
+                    {
+                        Countries_Id = c.Int(nullable: false),
+                        Films_Id = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.Countries_Id, t.Films_Id })
+                .ForeignKey("dbo.Countries", t => t.Countries_Id, cascadeDelete: true)
+                .ForeignKey("dbo.Films", t => t.Films_Id, cascadeDelete: true)
+                .Index(t => t.Countries_Id)
+                .Index(t => t.Films_Id);
             
             CreateTable(
                 "dbo.GenresFilms",
@@ -116,21 +138,27 @@
             DropForeignKey("dbo.GenresFilms", "Films_Id", "dbo.Films");
             DropForeignKey("dbo.GenresFilms", "Genres_Id", "dbo.Genres");
             DropForeignKey("dbo.FurtherInfoes", "Id", "dbo.Films");
+            DropForeignKey("dbo.CountriesFilms", "Films_Id", "dbo.Films");
+            DropForeignKey("dbo.CountriesFilms", "Countries_Id", "dbo.Countries");
             DropIndex("dbo.ProfessionPersons", new[] { "Persons_Id" });
             DropIndex("dbo.ProfessionPersons", new[] { "Profession_Id" });
             DropIndex("dbo.PersonsFilms", new[] { "Films_Id" });
             DropIndex("dbo.PersonsFilms", new[] { "Persons_Id" });
             DropIndex("dbo.GenresFilms", new[] { "Films_Id" });
             DropIndex("dbo.GenresFilms", new[] { "Genres_Id" });
+            DropIndex("dbo.CountriesFilms", new[] { "Films_Id" });
+            DropIndex("dbo.CountriesFilms", new[] { "Countries_Id" });
             DropIndex("dbo.FurtherInfoes", new[] { "Id" });
             DropIndex("dbo.Films", new[] { "Films_Id" });
             DropTable("dbo.ProfessionPersons");
             DropTable("dbo.PersonsFilms");
             DropTable("dbo.GenresFilms");
+            DropTable("dbo.CountriesFilms");
             DropTable("dbo.Professions");
             DropTable("dbo.Persons");
             DropTable("dbo.Genres");
             DropTable("dbo.FurtherInfoes");
+            DropTable("dbo.Countries");
             DropTable("dbo.Films");
         }
     }

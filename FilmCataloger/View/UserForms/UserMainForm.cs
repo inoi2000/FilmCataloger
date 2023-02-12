@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FilmCataloger.View.UserForms
 {
-    public partial class MainForm : Form
+    public partial class UserMainForm : Form
     {
-        public MainForm()
+        public UserMainForm()
         {
             InitializeComponent();
         }
