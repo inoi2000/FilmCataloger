@@ -11,11 +11,13 @@ namespace FilmCataloger.Model
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public char Gender { get; set; }
         public DateTime BirthDate { get; set; }
         public string PictureRef { get; set; }
 
+        public Countries Сountry { get; set; }
         public ICollection<Profession> Professions { get; set; }
-        
         public ICollection<Films> Films { get; set; }
+        public ICollection<Categories> Categories { get; set; }
     }
 }

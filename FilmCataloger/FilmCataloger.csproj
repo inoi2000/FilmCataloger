@@ -60,7 +60,16 @@
     <Compile Include="Migrations\202302121453563_InitialCreate.designer.cs">
       <DependentUpon>202302121453563_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202302121932476_Update DbContext.cs" />
+    <Compile Include="Migrations\202302121932476_Update DbContext.designer.cs">
+      <DependentUpon>202302121932476_Update DbContext.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202302151552117_Add categories.cs" />
+    <Compile Include="Migrations\202302151552117_Add categories.designer.cs">
+      <DependentUpon>202302151552117_Add categories.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\Categories.cs" />
     <Compile Include="Model\Countries.cs" />
     <Compile Include="Model\FilmCatalogerDbContext.cs" />
     <Compile Include="Model\Films.cs" />
@@ -127,6 +136,12 @@
     <EmbeddedResource Include="Migrations\202302121453563_InitialCreate.resx">
       <DependentUpon>202302121453563_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202302121932476_Update DbContext.resx">
+      <DependentUpon>202302121932476_Update DbContext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202302151552117_Add categories.resx">
+      <DependentUpon>202302151552117_Add categories.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -136,6 +151,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\AdminForms\AdminMainForm.resx">
+      <DependentUpon>AdminMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AdminForms\CreateFilmForm.resx">
+      <DependentUpon>CreateFilmForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\UserForms\UserMainForm.resx">
       <DependentUpon>UserMainForm.cs</DependentUpon>
     </EmbeddedResource>

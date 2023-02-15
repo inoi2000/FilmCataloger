@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FilmCataloger.Model
 {
-    public class Countries
+    public class Categories
     {
         public int Id { get; set; }
         public string Name { get; set; }

@@ -20,7 +20,7 @@ namespace FilmCataloger.Model
         public ICollection<Films> RelatedFilms { get; set; }
         public ICollection<Genres> Genres { get; set; }
         public ICollection<Persons> Persons  { get; set; }
-
         public ICollection<Countries> Countries { get; set; }
+        public ICollection<Categories> Categories { get; set; }
     }
 }

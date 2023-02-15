@@ -16,5 +16,7 @@ namespace FilmCataloger.Model
         public DbSet<Genres> Genres { get; set; }
         public DbSet<Persons> Persons { get; set; }
         public DbSet<Profession> Professions { get; set; }
+        public DbSet<Countries> Countries { get; set; }
+        public DbSet<Categories> Categories { get; set; }
     }
 }

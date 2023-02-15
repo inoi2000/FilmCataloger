@@ -16,5 +16,15 @@ namespace FilmCataloger.View.AdminForms
         {
             InitializeComponent();
         }
+
+        private void CreateFilm_button_Click(object sender, EventArgs e)
+        {
+            new CreateFilmForm().ShowDialog();
+        }
+
+        private void CreatePerson_button_Click(object sender, EventArgs e)
+        {
+            new CreatePersonForm().ShowDialog();
+        }
     }
 }
