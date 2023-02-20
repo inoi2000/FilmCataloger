@@ -12,5 +12,10 @@ namespace FilmCataloger.Model
         public string Name { get; set; }
 
         public ICollection<Persons> Persons { get; set; }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

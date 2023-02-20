@@ -14,7 +14,7 @@ namespace FilmCataloger.Model
         [ForeignKey("Film")]
         public int Id { get; set; }
         public string Description { get; set; }
-        public int AgeLimit { get; set; }
+        public string AgeLimit { get; set; }
         public decimal Fees { get; set; }
 
         public Films Film { get; set; }

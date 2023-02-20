@@ -11,6 +11,11 @@ namespace FilmCataloger.Model
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public ICollection<Films> Films { get; set; }
+        public ICollection<Films> Films { get; set; } = new List<Films>();
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

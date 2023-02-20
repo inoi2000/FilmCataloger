@@ -16,8 +16,13 @@ namespace FilmCataloger.Model
         public string PictureRef { get; set; }
 
         public Countries Сountry { get; set; }
-        public ICollection<Profession> Professions { get; set; }
+        public ICollection<Profession> Professions { get; set; } = new List<Profession>();
         public ICollection<Films> Films { get; set; }
         public ICollection<Categories> Categories { get; set; }
+
+        public override string ToString()
+        {
+            return $"{FirstName} {LastName}";
+        }
     }
 }

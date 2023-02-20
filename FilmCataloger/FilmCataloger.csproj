@@ -68,6 +68,18 @@
     <Compile Include="Migrations\202302151552117_Add categories.designer.cs">
       <DependentUpon>202302151552117_Add categories.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202302151832462_Update.cs" />
+    <Compile Include="Migrations\202302151832462_Update.designer.cs">
+      <DependentUpon>202302151832462_Update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202302161831103_Add duration.cs" />
+    <Compile Include="Migrations\202302161831103_Add duration.designer.cs">
+      <DependentUpon>202302161831103_Add duration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202302181706397_Update2.cs" />
+    <Compile Include="Migrations\202302181706397_Update2.designer.cs">
+      <DependentUpon>202302181706397_Update2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Categories.cs" />
     <Compile Include="Model\Countries.cs" />
@@ -79,6 +91,8 @@
     <Compile Include="Model\Profession.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\FillingListView.cs" />
+    <Compile Include="Services\ToListViewItem.cs" />
     <Compile Include="View\AdminForms\AdminMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,11 +111,23 @@
     <Compile Include="View\AdminForms\ChangePersonInfoForm.Designer.cs">
       <DependentUpon>ChangePersonInfoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\AdminForms\CreateFilmForms\AddPersonForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AdminForms\CreateFilmForms\AddPersonForm.Designer.cs">
+      <DependentUpon>AddPersonForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\AdminForms\CreateFilmForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\AdminForms\CreateFilmForm.Designer.cs">
       <DependentUpon>CreateFilmForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AdminForms\CreateFilmForms\AddRelatedFilmForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AdminForms\CreateFilmForms\AddRelatedFilmForm.Designer.cs">
+      <DependentUpon>AddRelatedFilmForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\AdminForms\CreatePersonForm.cs">
       <SubType>Form</SubType>
@@ -142,6 +168,15 @@
     <EmbeddedResource Include="Migrations\202302151552117_Add categories.resx">
       <DependentUpon>202302151552117_Add categories.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202302151832462_Update.resx">
+      <DependentUpon>202302151832462_Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202302161831103_Add duration.resx">
+      <DependentUpon>202302161831103_Add duration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202302181706397_Update2.resx">
+      <DependentUpon>202302181706397_Update2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -154,8 +189,20 @@
     <EmbeddedResource Include="View\AdminForms\AdminMainForm.resx">
       <DependentUpon>AdminMainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\AdminForms\ChangeFilmInfoForm.resx">
+      <DependentUpon>ChangeFilmInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AdminForms\CreateFilmForms\AddPersonForm.resx">
+      <DependentUpon>AddPersonForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\AdminForms\CreateFilmForm.resx">
       <DependentUpon>CreateFilmForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AdminForms\CreateFilmForms\AddRelatedFilmForm.resx">
+      <DependentUpon>AddRelatedFilmForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AdminForms\CreatePersonForm.resx">
+      <DependentUpon>CreatePersonForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

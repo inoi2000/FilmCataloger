@@ -15,6 +15,10 @@ namespace FilmCataloger.View.UserForms
         public UserMainForm()
         {
             InitializeComponent();
+            //Films_listView.
+            ImageList imageList = new ImageList();
+            //imageList.Images.Add(Image.)
+
         }
     }
 }

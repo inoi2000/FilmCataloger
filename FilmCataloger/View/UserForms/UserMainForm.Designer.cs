@@ -28,32 +28,163 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.Films_listView = new System.Windows.Forms.ListView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.Persons_listView = new System.Windows.Forms.ListView();
+            this.button3 = new System.Windows.Forms.Button();
+            this.listView3 = new System.Windows.Forms.ListView();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // listView1
+            // Films_listView
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(150, 12);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(638, 426);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.Films_listView.HideSelection = false;
+            this.Films_listView.Location = new System.Drawing.Point(18, 195);
+            this.Films_listView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Films_listView.Name = "Films_listView";
+            this.Films_listView.Size = new System.Drawing.Size(1162, 239);
+            this.Films_listView.TabIndex = 0;
+            this.Films_listView.UseCompatibleStateImageBehavior = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.button6);
+            this.groupBox1.Controls.Add(this.button5);
+            this.groupBox1.Controls.Add(this.button4);
+            this.groupBox1.Location = new System.Drawing.Point(18, 18);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Size = new System.Drawing.Size(1164, 91);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(777, 37);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(272, 26);
+            this.textBox1.TabIndex = 10;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(1113, 29);
+            this.button6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(42, 43);
+            this.button6.TabIndex = 9;
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(1060, 29);
+            this.button5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(44, 43);
+            this.button5.TabIndex = 8;
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(9, 23);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(225, 58);
+            this.button4.TabIndex = 7;
+            this.button4.Text = "главное меню";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(393, 128);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(354, 58);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "ФИЛЬМЫ";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(393, 472);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(354, 58);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "ДЕЯТЕЛИ КИНО";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // Persons_listView
+            // 
+            this.Persons_listView.HideSelection = false;
+            this.Persons_listView.Location = new System.Drawing.Point(18, 540);
+            this.Persons_listView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Persons_listView.Name = "Persons_listView";
+            this.Persons_listView.Size = new System.Drawing.Size(1162, 239);
+            this.Persons_listView.TabIndex = 3;
+            this.Persons_listView.UseCompatibleStateImageBehavior = false;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(393, 817);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(354, 58);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "КАТЕГОРИИ";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // listView3
+            // 
+            this.listView3.HideSelection = false;
+            this.listView3.Location = new System.Drawing.Point(18, 885);
+            this.listView3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.listView3.Name = "listView3";
+            this.listView3.Size = new System.Drawing.Size(1162, 239);
+            this.listView3.TabIndex = 5;
+            this.listView3.UseCompatibleStateImageBehavior = false;
             // 
             // UserMainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.listView1);
+            this.ClientSize = new System.Drawing.Size(1200, 1050);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.listView3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.Persons_listView);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.Films_listView);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "UserMainForm";
             this.Text = "Главное меню";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView Films_listView;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ListView Persons_listView;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ListView listView3;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button4;
     }
 }
