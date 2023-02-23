@@ -215,6 +215,7 @@
             this.Description_textBox.Location = new System.Drawing.Point(33, 475);
             this.Description_textBox.Multiline = true;
             this.Description_textBox.Name = "Description_textBox";
+            this.Description_textBox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.Description_textBox.Size = new System.Drawing.Size(711, 72);
             this.Description_textBox.TabIndex = 18;
             // 
@@ -283,14 +284,14 @@
             // 
             // Duration_dateTimePicker
             // 
-            this.Duration_dateTimePicker.CustomFormat = "HH-mm-ss";
-            this.Duration_dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.Duration_dateTimePicker.CustomFormat = "HH:mm";
+            this.Duration_dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.Duration_dateTimePicker.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.Duration_dateTimePicker.Location = new System.Drawing.Point(33, 157);
             this.Duration_dateTimePicker.Name = "Duration_dateTimePicker";
             this.Duration_dateTimePicker.Size = new System.Drawing.Size(293, 20);
             this.Duration_dateTimePicker.TabIndex = 26;
-            this.Duration_dateTimePicker.Value = new System.DateTime(2023, 2, 16, 0, 0, 0, 0);
+            this.Duration_dateTimePicker.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
             // AgeLimit_comboBox
             // 
@@ -339,6 +340,7 @@
             this.Controls.Add(this.IMDb_numericUpDown);
             this.Controls.Add(this.Name_textBox);
             this.Name = "CreateFilmForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreateFilmForm";
             ((System.ComponentModel.ISupportInitialize)(this.IMDb_numericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Fees_numericUpDown)).EndInit();

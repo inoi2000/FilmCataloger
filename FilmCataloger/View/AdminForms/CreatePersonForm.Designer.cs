@@ -37,8 +37,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.LastName_textBox = new System.Windows.Forms.TextBox();
             this.Gender_groupBox = new System.Windows.Forms.GroupBox();
-            this.MGender_radioButton = new System.Windows.Forms.RadioButton();
             this.FGender_radioButton = new System.Windows.Forms.RadioButton();
+            this.MGender_radioButton = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
             this.PictureRef_textBox = new System.Windows.Forms.TextBox();
             this.Create_button = new System.Windows.Forms.Button();
@@ -124,6 +124,16 @@
             this.Gender_groupBox.TabStop = false;
             this.Gender_groupBox.Text = "Пол";
             // 
+            // FGender_radioButton
+            // 
+            this.FGender_radioButton.AutoSize = true;
+            this.FGender_radioButton.Location = new System.Drawing.Point(123, 23);
+            this.FGender_radioButton.Name = "FGender_radioButton";
+            this.FGender_radioButton.Size = new System.Drawing.Size(72, 17);
+            this.FGender_radioButton.TabIndex = 1;
+            this.FGender_radioButton.Text = "Женский";
+            this.FGender_radioButton.UseVisualStyleBackColor = true;
+            // 
             // MGender_radioButton
             // 
             this.MGender_radioButton.AutoSize = true;
@@ -135,16 +145,6 @@
             this.MGender_radioButton.TabStop = true;
             this.MGender_radioButton.Text = "Мужской";
             this.MGender_radioButton.UseVisualStyleBackColor = true;
-            // 
-            // FGender_radioButton
-            // 
-            this.FGender_radioButton.AutoSize = true;
-            this.FGender_radioButton.Location = new System.Drawing.Point(123, 23);
-            this.FGender_radioButton.Name = "FGender_radioButton";
-            this.FGender_radioButton.Size = new System.Drawing.Size(72, 17);
-            this.FGender_radioButton.TabIndex = 1;
-            this.FGender_radioButton.Text = "Женский";
-            this.FGender_radioButton.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -173,6 +173,7 @@
             // 
             // Countries_comboBox
             // 
+            this.Countries_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Countries_comboBox.FormattingEnabled = true;
             this.Countries_comboBox.Location = new System.Drawing.Point(35, 301);
             this.Countries_comboBox.Name = "Countries_comboBox";

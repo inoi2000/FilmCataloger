@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FilmCataloger.View.UserForms
+namespace FilmCataloger.View.InfoForms
 {
-    public partial class FilmForm : Form
+    public partial class PersonInfoForm : Form
     {
-        public FilmForm()
+        public PersonInfoForm()
         {
             InitializeComponent();
         }

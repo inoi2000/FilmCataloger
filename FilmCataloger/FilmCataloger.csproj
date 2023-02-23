@@ -80,20 +80,31 @@
     <Compile Include="Migrations\202302181706397_Update2.designer.cs">
       <DependentUpon>202302181706397_Update2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202302230823423_Genders.cs" />
+    <Compile Include="Migrations\202302230823423_Genders.designer.cs">
+      <DependentUpon>202302230823423_Genders.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Categories.cs" />
     <Compile Include="Model\Countries.cs" />
     <Compile Include="Model\FilmCatalogerDbContext.cs" />
     <Compile Include="Model\Films.cs" />
     <Compile Include="Model\FurtherInfo.cs" />
+    <Compile Include="Model\Gender.cs" />
     <Compile Include="Model\Genres.cs" />
     <Compile Include="Model\Persons.cs" />
     <Compile Include="Model\Profession.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\CategoryService.cs" />
+    <Compile Include="Services\ContextService.cs" />
+    <Compile Include="Services\CountryService.cs" />
+    <Compile Include="Services\FilmService.cs" />
+    <Compile Include="Services\GenresService.cs" />
     <Compile Include="Services\IEntity.cs" />
     <Compile Include="Services\IService.cs" />
     <Compile Include="Services\PersonService.cs" />
+    <Compile Include="Services\ProfessionService.cs" />
     <Compile Include="Services\ViewService.cs" />
     <Compile Include="View\AdminForms\AdminMainForm.cs">
       <SubType>Form</SubType>
@@ -137,29 +148,47 @@
     <Compile Include="View\AdminForms\CreatePersonForm.Designer.cs">
       <DependentUpon>CreatePersonForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\CatalogForms\CategoriesCatalogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CatalogForms\CategoriesCatalogForm.Designer.cs">
+      <DependentUpon>CategoriesCatalogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\CatalogForms\FilmsCatalogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CatalogForms\FilmsCatalogForm.Designer.cs">
+      <DependentUpon>FilmsCatalogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\CatalogForms\PersonsCatalogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CatalogForms\PersonsCatalogForm.Designer.cs">
+      <DependentUpon>PersonsCatalogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\InfoForms\CategoryInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\InfoForms\CategoryInfoForm.Designer.cs">
+      <DependentUpon>CategoryInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\InfoForms\FilmInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\InfoForms\FilmInfoForm.Designer.cs">
+      <DependentUpon>FilmInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\InfoForms\PersonInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\InfoForms\PersonInfoForm.Designer.cs">
+      <DependentUpon>PersonInfoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\UserForms\FilmForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\UserForms\FilmForm.Designer.cs">
-      <DependentUpon>FilmForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\UserForms\UserMainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\UserForms\UserMainForm.Designer.cs">
-      <DependentUpon>UserMainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\UserForms\PersonForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\UserForms\PersonForm.Designer.cs">
-      <DependentUpon>PersonForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Migrations\202302121453563_InitialCreate.resx">
       <DependentUpon>202302121453563_InitialCreate.cs</DependentUpon>
@@ -179,6 +208,9 @@
     <EmbeddedResource Include="Migrations\202302181706397_Update2.resx">
       <DependentUpon>202302181706397_Update2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202302230823423_Genders.resx">
+      <DependentUpon>202302230823423_Genders.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -193,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\AdminForms\ChangeFilmInfoForm.resx">
       <DependentUpon>ChangeFilmInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AdminForms\ChangePersonInfoForm.resx">
+      <DependentUpon>ChangePersonInfoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\AdminForms\CreateFilmForms\AddPersonForm.resx">
       <DependentUpon>AddPersonForm.cs</DependentUpon>
@@ -209,9 +244,6 @@
     <EmbeddedResource Include="View\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\UserForms\UserMainForm.resx">
-      <DependentUpon>UserMainForm.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -226,7 +258,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="View\SearchForms\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

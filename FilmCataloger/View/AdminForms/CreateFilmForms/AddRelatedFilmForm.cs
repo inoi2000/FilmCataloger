@@ -1,4 +1,5 @@
 ﻿using FilmCataloger.Model;
+using FilmCataloger.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,13 +14,11 @@ namespace FilmCataloger.View.AdminForms.CreateFilmForms
 {
     public partial class AddRelatedFilmForm : Form
     {
-        readonly FilmCatalogerDbContext _context;
         ListBox RelatedFilm_ListBox;
         public AddRelatedFilmForm(ref ListBox RelatedFilm_ListBox)
         {
             InitializeComponent();
             this.RelatedFilm_ListBox = RelatedFilm_ListBox;
-            _context = new FilmCatalogerDbContext();
         }
 
         private void Add_button_Click(object sender, EventArgs e)
@@ -30,7 +29,7 @@ namespace FilmCataloger.View.AdminForms.CreateFilmForms
             }
             else
             {
-                Films film = _context.Films.Where(f => f.Name == Name_textBox.Text).FirstOrDefault();
+                Films film = FilmService.Instance.GetObject(Name_textBox.Text);
                 if (film == null)
                 {
                     MessageBox.Show("Такой фильм еще не добавлен в приложение");

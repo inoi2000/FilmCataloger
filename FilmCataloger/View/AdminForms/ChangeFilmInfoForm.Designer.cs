@@ -68,18 +68,16 @@
             "12+",
             "16+",
             "18+"});
-            this.AgeLimit_comboBox.Location = new System.Drawing.Point(1175, 719);
-            this.AgeLimit_comboBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.AgeLimit_comboBox.Location = new System.Drawing.Point(783, 467);
             this.AgeLimit_comboBox.Name = "AgeLimit_comboBox";
-            this.AgeLimit_comboBox.Size = new System.Drawing.Size(354, 28);
+            this.AgeLimit_comboBox.Size = new System.Drawing.Size(237, 21);
             this.AgeLimit_comboBox.TabIndex = 55;
             // 
             // label12
             // 
-            this.label12.Location = new System.Drawing.Point(35, 205);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Location = new System.Drawing.Point(23, 133);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(278, 20);
+            this.label12.Size = new System.Drawing.Size(185, 13);
             this.label12.TabIndex = 54;
             this.label12.Text = "Продолжительность фильма";
             // 
@@ -88,19 +86,17 @@
             this.Duration_dateTimePicker.CustomFormat = "HH-mm-ss";
             this.Duration_dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.Duration_dateTimePicker.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.Duration_dateTimePicker.Location = new System.Drawing.Point(40, 230);
-            this.Duration_dateTimePicker.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Duration_dateTimePicker.Location = new System.Drawing.Point(27, 150);
             this.Duration_dateTimePicker.Name = "Duration_dateTimePicker";
-            this.Duration_dateTimePicker.Size = new System.Drawing.Size(438, 26);
+            this.Duration_dateTimePicker.Size = new System.Drawing.Size(293, 20);
             this.Duration_dateTimePicker.TabIndex = 53;
             this.Duration_dateTimePicker.Value = new System.DateTime(2023, 2, 16, 0, 0, 0, 0);
             // 
             // label11
             // 
-            this.label11.Location = new System.Drawing.Point(1072, 25);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Location = new System.Drawing.Point(715, 16);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(278, 20);
+            this.label11.Size = new System.Drawing.Size(185, 13);
             this.label11.TabIndex = 52;
             this.label11.Text = "Страны";
             // 
@@ -109,152 +105,136 @@
             this.Countries_checkedListBox.CheckOnClick = true;
             this.Countries_checkedListBox.FormattingEnabled = true;
             this.Countries_checkedListBox.HorizontalScrollbar = true;
-            this.Countries_checkedListBox.Location = new System.Drawing.Point(1072, 50);
-            this.Countries_checkedListBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Countries_checkedListBox.Location = new System.Drawing.Point(715, 32);
             this.Countries_checkedListBox.MultiColumn = true;
             this.Countries_checkedListBox.Name = "Countries_checkedListBox";
-            this.Countries_checkedListBox.Size = new System.Drawing.Size(451, 257);
+            this.Countries_checkedListBox.Size = new System.Drawing.Size(302, 154);
             this.Countries_checkedListBox.TabIndex = 51;
             // 
             // label10
             // 
-            this.label10.Location = new System.Drawing.Point(1169, 774);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(779, 503);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(278, 20);
+            this.label10.Size = new System.Drawing.Size(185, 13);
             this.label10.TabIndex = 50;
             this.label10.Text = "Бюджет фильма";
             // 
             // label9
             // 
-            this.label9.Location = new System.Drawing.Point(1170, 694);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(780, 451);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(278, 20);
+            this.label9.Size = new System.Drawing.Size(185, 13);
             this.label9.TabIndex = 49;
             this.label9.Text = "Возрастное ограничение";
             // 
             // Fees_numericUpDown
             // 
-            this.Fees_numericUpDown.Location = new System.Drawing.Point(1175, 799);
-            this.Fees_numericUpDown.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Fees_numericUpDown.Location = new System.Drawing.Point(783, 519);
             this.Fees_numericUpDown.Maximum = new decimal(new int[] {
             -727379968,
             232,
             0,
             0});
             this.Fees_numericUpDown.Name = "Fees_numericUpDown";
-            this.Fees_numericUpDown.Size = new System.Drawing.Size(354, 26);
+            this.Fees_numericUpDown.Size = new System.Drawing.Size(236, 20);
             this.Fees_numericUpDown.TabIndex = 48;
             // 
             // label8
             // 
-            this.label8.Location = new System.Drawing.Point(35, 694);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(23, 451);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(278, 20);
+            this.label8.Size = new System.Drawing.Size(185, 13);
             this.label8.TabIndex = 47;
             this.label8.Text = "Описание";
             // 
             // Description_textBox
             // 
-            this.Description_textBox.Location = new System.Drawing.Point(40, 719);
-            this.Description_textBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Description_textBox.Location = new System.Drawing.Point(27, 467);
             this.Description_textBox.Multiline = true;
             this.Description_textBox.Name = "Description_textBox";
-            this.Description_textBox.Size = new System.Drawing.Size(1064, 109);
+            this.Description_textBox.Size = new System.Drawing.Size(711, 72);
             this.Description_textBox.TabIndex = 46;
             // 
             // AddRelatedFilm_button
             // 
-            this.AddRelatedFilm_button.Location = new System.Drawing.Point(938, 614);
-            this.AddRelatedFilm_button.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.AddRelatedFilm_button.Location = new System.Drawing.Point(625, 399);
             this.AddRelatedFilm_button.Name = "AddRelatedFilm_button";
-            this.AddRelatedFilm_button.Size = new System.Drawing.Size(272, 63);
+            this.AddRelatedFilm_button.Size = new System.Drawing.Size(181, 41);
             this.AddRelatedFilm_button.TabIndex = 45;
             this.AddRelatedFilm_button.Text = "Добавить связанный фильм";
             this.AddRelatedFilm_button.UseVisualStyleBackColor = true;
             // 
             // AddPerson_button
             // 
-            this.AddPerson_button.Location = new System.Drawing.Point(354, 614);
-            this.AddPerson_button.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.AddPerson_button.Location = new System.Drawing.Point(236, 399);
             this.AddPerson_button.Name = "AddPerson_button";
-            this.AddPerson_button.Size = new System.Drawing.Size(272, 63);
+            this.AddPerson_button.Size = new System.Drawing.Size(181, 41);
             this.AddPerson_button.TabIndex = 44;
             this.AddPerson_button.Text = "Добавить создателя / актера";
             this.AddPerson_button.UseVisualStyleBackColor = true;
             // 
             // CreateFilm_button
             // 
-            this.CreateFilm_button.Location = new System.Drawing.Point(590, 871);
-            this.CreateFilm_button.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.CreateFilm_button.Location = new System.Drawing.Point(393, 566);
             this.CreateFilm_button.Name = "CreateFilm_button";
-            this.CreateFilm_button.Size = new System.Drawing.Size(332, 83);
+            this.CreateFilm_button.Size = new System.Drawing.Size(221, 54);
             this.CreateFilm_button.TabIndex = 43;
             this.CreateFilm_button.Text = "Сохранить изменения";
             this.CreateFilm_button.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
-            this.label7.Location = new System.Drawing.Point(786, 354);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(524, 230);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(278, 20);
+            this.label7.Size = new System.Drawing.Size(185, 13);
             this.label7.TabIndex = 42;
             this.label7.Text = "Связанные фильмы";
             // 
             // label6
             // 
-            this.label6.Location = new System.Drawing.Point(202, 354);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(135, 230);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(278, 20);
+            this.label6.Size = new System.Drawing.Size(185, 13);
             this.label6.TabIndex = 41;
             this.label6.Text = "Создатели / актеры";
             // 
             // label5
             // 
-            this.label5.Location = new System.Drawing.Point(586, 25);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(391, 16);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(278, 20);
+            this.label5.Size = new System.Drawing.Size(185, 13);
             this.label5.TabIndex = 40;
             this.label5.Text = "Жанры";
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(35, 262);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(23, 170);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(278, 20);
+            this.label4.Size = new System.Drawing.Size(185, 13);
             this.label4.TabIndex = 39;
             this.label4.Text = "Ссылка на изображение";
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(35, 145);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(23, 94);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(190, 20);
+            this.label3.Size = new System.Drawing.Size(127, 13);
             this.label3.TabIndex = 38;
             this.label3.Text = "Рейтинг IMDb";
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(35, 85);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(23, 55);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(190, 20);
+            this.label2.Size = new System.Drawing.Size(127, 13);
             this.label2.TabIndex = 37;
             this.label2.Text = "Премьера";
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(35, 25);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(23, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(190, 20);
+            this.label1.Size = new System.Drawing.Size(127, 13);
             this.label1.TabIndex = 36;
             this.label1.Text = "Название";
             // 
@@ -262,22 +242,18 @@
             // 
             this.RelatedFilms_listBox.FormattingEnabled = true;
             this.RelatedFilms_listBox.HorizontalScrollbar = true;
-            this.RelatedFilms_listBox.ItemHeight = 20;
-            this.RelatedFilms_listBox.Location = new System.Drawing.Point(791, 379);
-            this.RelatedFilms_listBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.RelatedFilms_listBox.Location = new System.Drawing.Point(527, 246);
             this.RelatedFilms_listBox.Name = "RelatedFilms_listBox";
-            this.RelatedFilms_listBox.Size = new System.Drawing.Size(538, 204);
+            this.RelatedFilms_listBox.Size = new System.Drawing.Size(360, 134);
             this.RelatedFilms_listBox.TabIndex = 35;
             // 
             // Persons_listBox
             // 
             this.Persons_listBox.FormattingEnabled = true;
             this.Persons_listBox.HorizontalScrollbar = true;
-            this.Persons_listBox.ItemHeight = 20;
-            this.Persons_listBox.Location = new System.Drawing.Point(206, 379);
-            this.Persons_listBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Persons_listBox.Location = new System.Drawing.Point(137, 246);
             this.Persons_listBox.Name = "Persons_listBox";
-            this.Persons_listBox.Size = new System.Drawing.Size(538, 204);
+            this.Persons_listBox.Size = new System.Drawing.Size(360, 134);
             this.Persons_listBox.TabIndex = 34;
             // 
             // Genres_checkedListBox
@@ -285,58 +261,53 @@
             this.Genres_checkedListBox.CheckOnClick = true;
             this.Genres_checkedListBox.FormattingEnabled = true;
             this.Genres_checkedListBox.HorizontalScrollbar = true;
-            this.Genres_checkedListBox.Location = new System.Drawing.Point(590, 50);
-            this.Genres_checkedListBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Genres_checkedListBox.Location = new System.Drawing.Point(393, 32);
             this.Genres_checkedListBox.MultiColumn = true;
             this.Genres_checkedListBox.Name = "Genres_checkedListBox";
-            this.Genres_checkedListBox.Size = new System.Drawing.Size(451, 257);
+            this.Genres_checkedListBox.Size = new System.Drawing.Size(302, 154);
             this.Genres_checkedListBox.TabIndex = 33;
             // 
             // PictureRef_textBox
             // 
-            this.PictureRef_textBox.Location = new System.Drawing.Point(40, 286);
-            this.PictureRef_textBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.PictureRef_textBox.Location = new System.Drawing.Point(27, 186);
             this.PictureRef_textBox.Name = "PictureRef_textBox";
-            this.PictureRef_textBox.Size = new System.Drawing.Size(438, 26);
+            this.PictureRef_textBox.Size = new System.Drawing.Size(293, 20);
             this.PictureRef_textBox.TabIndex = 32;
             // 
             // Production_dateTimePicker
             // 
             this.Production_dateTimePicker.CustomFormat = "dd/yyyy";
             this.Production_dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.Production_dateTimePicker.Location = new System.Drawing.Point(40, 110);
-            this.Production_dateTimePicker.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Production_dateTimePicker.Location = new System.Drawing.Point(27, 72);
             this.Production_dateTimePicker.Name = "Production_dateTimePicker";
-            this.Production_dateTimePicker.Size = new System.Drawing.Size(438, 26);
+            this.Production_dateTimePicker.Size = new System.Drawing.Size(293, 20);
             this.Production_dateTimePicker.TabIndex = 31;
             // 
             // IMDb_numericUpDown
             // 
             this.IMDb_numericUpDown.DecimalPlaces = 1;
-            this.IMDb_numericUpDown.Location = new System.Drawing.Point(40, 170);
-            this.IMDb_numericUpDown.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.IMDb_numericUpDown.Location = new System.Drawing.Point(27, 110);
             this.IMDb_numericUpDown.Maximum = new decimal(new int[] {
             10,
             0,
             0,
             0});
             this.IMDb_numericUpDown.Name = "IMDb_numericUpDown";
-            this.IMDb_numericUpDown.Size = new System.Drawing.Size(440, 26);
+            this.IMDb_numericUpDown.Size = new System.Drawing.Size(293, 20);
             this.IMDb_numericUpDown.TabIndex = 30;
             // 
             // Name_textBox
             // 
-            this.Name_textBox.Location = new System.Drawing.Point(40, 50);
-            this.Name_textBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Name_textBox.Location = new System.Drawing.Point(27, 32);
             this.Name_textBox.Name = "Name_textBox";
-            this.Name_textBox.Size = new System.Drawing.Size(438, 26);
+            this.Name_textBox.Size = new System.Drawing.Size(293, 20);
             this.Name_textBox.TabIndex = 29;
             // 
             // ChangeFilmInfoForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1578, 979);
+            this.ClientSize = new System.Drawing.Size(1052, 636);
             this.Controls.Add(this.AgeLimit_comboBox);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.Duration_dateTimePicker);
@@ -364,7 +335,9 @@
             this.Controls.Add(this.Production_dateTimePicker);
             this.Controls.Add(this.IMDb_numericUpDown);
             this.Controls.Add(this.Name_textBox);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ChangeFilmInfoForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ChangeFilmInfoForm";
             ((System.ComponentModel.ISupportInitialize)(this.Fees_numericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IMDb_numericUpDown)).EndInit();

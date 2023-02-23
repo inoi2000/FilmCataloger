@@ -1,4 +1,5 @@
 ﻿using FilmCataloger.Model;
+using FilmCataloger.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,23 +14,20 @@ namespace FilmCataloger.View.AdminForms
 {
     public partial class CreatePersonForm : Form
     {
-        private readonly FilmCatalogerDbContext _context;
-        List<Profession> professions;
-        List<Countries> countries;
-
         public CreatePersonForm()
         {
             InitializeComponent();
-            _context = new FilmCatalogerDbContext();
-            _context.Configuration.LazyLoadingEnabled = false;
-            professions = _context.Professions.ToList();
-            countries = _context.Countries.ToList();
-            professions.ForEach(p => Professions_checkedListBox.Items.Add(p));
-            countries.ForEach(c => Countries_comboBox.Items.Add(c));
+            List<Profession> professions;
+            List<Countries> countries;
+            professions = ProfessionService.Instance.GetAllObjects().ToList();
+            professions.ForEach(obj => Professions_checkedListBox.Items.Add(obj));
+            countries = CountryService.Instance.GetAllObjects().ToList();
+            countries.ForEach(obj => Countries_comboBox.Items.Add(obj));
         }
 
         private void Create_button_Click(object sender, EventArgs e)
         {
+            // Creating new Person
             Persons newPerson = new Persons
             {
                 FirstName = FirstName_textBox.Text,
@@ -38,18 +36,15 @@ namespace FilmCataloger.View.AdminForms
                 PictureRef = PictureRef_textBox.Text,
                 Сountry = (Countries)Countries_comboBox.SelectedItem
             };
-            if (MGender_radioButton.Checked) { newPerson.Gender = 'М'; }
-            else if (FGender_radioButton.Checked) { newPerson.Gender = 'F'; }
+            if (MGender_radioButton.Checked) { newPerson.Gender = Gender.Мужской; }
+            else if (FGender_radioButton.Checked) { newPerson.Gender = Gender.Женский; }
             foreach (Profession profession in Professions_checkedListBox.CheckedItems)
             {
                 newPerson.Professions.Add(profession);
             }
+            // Adding new Person
+            PersonService.Instance.AddObject(newPerson);
 
-            _context.Persons.Add(newPerson);
-
-            _context.SaveChanges();
-
-            MessageBox.Show("Добавление прошло успешно!");
             this.Close();
         }
     }

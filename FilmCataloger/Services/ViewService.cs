@@ -8,33 +8,42 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.WebRequestMethods;
 
 namespace FilmCataloger.Services
 {
     public static class ViewService
     {
-        public static bool FillingListView(ICollection<Films> films, ListView listView)
+        public static void FillingListView(ICollection<Films> films, ListView listView, ImageList imageList)
         {
             try
             {
+                listView.LargeImageList = imageList;
+                listView.LargeImageList.ImageSize = new Size(60, 90);
                 foreach (Films film in films)
                 {
                     ListViewItem listViewItem = new ListViewItem();
                     listViewItem.Text = $"{film.IMDb} {film.Name}";
                     listViewItem.ImageKey = film.Id.ToString();
 
-                    // TODO
-                    // listView.LargeImageList.Images.Add()
+                    //Download the Image
+                    WebClient wc = new WebClient();
+                    byte[] bytes = wc.DownloadData(film.PictureRef);
+                    MemoryStream ms = new MemoryStream(bytes);
+                    Image img = Image.FromStream(ms);
+                    ms.Dispose();
+                    //Add the image to an image list
+                    imageList.Images.Add(film.Id.ToString(), img);
 
+                    listView.Items.Add(listViewItem);
                 }
-                return true;
             }
-            catch { return false; }
+            catch { throw new System.Net.WebException(); }
         }
 
-        public static bool FillingListView(ICollection<Persons> persons, ListView listView, ImageList imageList)
+        public static void FillingListView(ICollection<Persons> persons, ListView listView, ImageList imageList)
         {
-            //try
+            try
             {
                 listView.LargeImageList = imageList;
                 listView.LargeImageList.ImageSize = new Size(60, 90);
@@ -48,30 +57,42 @@ namespace FilmCataloger.Services
                     WebClient wc = new WebClient();
                     byte[] bytes = wc.DownloadData(person.PictureRef);
                     MemoryStream ms = new MemoryStream(bytes);
-                    System.Drawing.Image img = System.Drawing.Image.FromStream(ms);
+                    Image img = Image.FromStream(ms);
                     ms.Dispose();
-
                     //Add the image to an image list
                     imageList.Images.Add(person.Id.ToString(), img);
                     
                     listView.Items.Add(listViewItem);
                 }
-                return true;
             }
-            //catch { return false; }
+            catch { throw new System.Net.WebException(); }
         }
 
-        public static bool FillingListView(ICollection<Categories> categories, ListView listView)
+        public static void FillingListView(ICollection<Categories> categories, ListView listView, ImageList imageList)
         {
             try
             {
+                listView.LargeImageList = imageList;
+                listView.LargeImageList.ImageSize = new Size(60, 90);
                 foreach (Categories category in categories)
                 {
+                    ListViewItem listViewItem = new ListViewItem();
+                    listViewItem.Text = $"{category.Name}";
+                    listViewItem.ImageKey = category.Id.ToString();
 
+                    //Download the Image
+                    WebClient wc = new WebClient();
+                    byte[] bytes = wc.DownloadData(category.PictureRef);
+                    MemoryStream ms = new MemoryStream(bytes);
+                    Image img = Image.FromStream(ms);
+                    ms.Dispose();
+                    //Add the image to an image list
+                    imageList.Images.Add(category.Id.ToString(), img);
+
+                    listView.Items.Add(listViewItem);
                 }
-                return true;
             }
-            catch { return false; }
+            catch { throw new System.Net.WebException(); }
         }
     }
 }

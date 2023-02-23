@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace FilmCataloger.Services
 {
-    public interface IService
+    public interface IService<Entity>
     {
-        IEntity AddObject(IEntity entity);
-        IEntity GetObject(int id);
-        //ICollection<IEntity> GetAllObjects();
+        Entity AddObject(Entity entity);
+        Entity GetObject(int id);
+        ICollection<Entity> GetAllObjects();
         bool RemoveObject(int id);
     }
 }

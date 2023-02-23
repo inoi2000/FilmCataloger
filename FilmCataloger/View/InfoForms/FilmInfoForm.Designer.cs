@@ -1,6 +1,6 @@
-﻿namespace FilmCataloger.View.AdminForms
+﻿namespace FilmCataloger.View.InfoForms
 {
-    partial class ChangePersonInfoForm
+    partial class FilmInfoForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,18 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // ChangePersonInfoForm
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "ChangePersonInfoForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ChangePersonInfoForm";
-            this.ResumeLayout(false);
-
+            this.Text = "FilmInfoForm";
         }
 
         #endregion

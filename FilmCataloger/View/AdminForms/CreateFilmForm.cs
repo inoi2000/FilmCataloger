@@ -1,4 +1,5 @@
 ﻿using FilmCataloger.Model;
+using FilmCataloger.Services;
 using FilmCataloger.View.AdminForms.CreateFilmForms;
 using System;
 using System.Collections.Generic;
@@ -14,29 +15,24 @@ namespace FilmCataloger.View.AdminForms
 {
     public partial class CreateFilmForm : Form
     {
-        private readonly FilmCatalogerDbContext _context;
-        List<Genres> genres;
-        List<Countries> сountries;
-
         public CreateFilmForm()
         {
             InitializeComponent();
-            _context = new FilmCatalogerDbContext();
-            _context.Configuration.LazyLoadingEnabled = false;
-            genres = _context.Genres.ToList();
-            сountries = _context.Countries.ToList();
-            genres.ForEach(gen => { Genres_checkedListBox.Items.Add(gen); });
-            сountries.ForEach(cou => { Countries_checkedListBox.Items.Add(cou); });
+            GenresService.Instance.GetAllObjects().ToList().ForEach(obj => Genres_checkedListBox.Items.Add(obj));
+            CountryService.Instance.GetAllObjects().ToList().ForEach(obj => Countries_checkedListBox.Items.Add(obj));
+            AgeLimit_comboBox.SelectedIndex= 0;
         }
 
         private void CreateFilm_button_Click(object sender, EventArgs e)
         {
+            // Creating new Film
             Films newFilm = new Films
             {
                 Name = Name_textBox.Text,
                 Production = Production_dateTimePicker.Value,
                 IMDb = (float)IMDb_numericUpDown.Value,
-                PictureRef = PictureRef_textBox.Text
+                PictureRef = PictureRef_textBox.Text,
+                Duration = Duration_dateTimePicker.Value
             };
             foreach (Genres item in Genres_checkedListBox.CheckedItems)
             {
@@ -54,6 +50,10 @@ namespace FilmCataloger.View.AdminForms
             };
             newFilm.FurtherInfo_FK = newFurtherInfo;
 
+            // Adding new Film
+            FilmService.Instance.AddObject(newFilm);
+
+            this.Close();
         }
 
         private void AddPerson_button_Click(object sender, EventArgs e)

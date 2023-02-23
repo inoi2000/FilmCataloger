@@ -38,9 +38,10 @@
             // 
             // Add_button
             // 
-            this.Add_button.Location = new System.Drawing.Point(89, 167);
+            this.Add_button.Location = new System.Drawing.Point(59, 109);
+            this.Add_button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Add_button.Name = "Add_button";
-            this.Add_button.Size = new System.Drawing.Size(108, 45);
+            this.Add_button.Size = new System.Drawing.Size(72, 29);
             this.Add_button.TabIndex = 1;
             this.Add_button.Text = "Применить";
             this.Add_button.UseVisualStyleBackColor = true;
@@ -48,9 +49,10 @@
             // 
             // Cancel_button
             // 
-            this.Cancel_button.Location = new System.Drawing.Point(255, 167);
+            this.Cancel_button.Location = new System.Drawing.Point(170, 109);
+            this.Cancel_button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Cancel_button.Name = "Cancel_button";
-            this.Cancel_button.Size = new System.Drawing.Size(108, 45);
+            this.Cancel_button.Size = new System.Drawing.Size(72, 29);
             this.Cancel_button.TabIndex = 2;
             this.Cancel_button.Text = "Отменить";
             this.Cancel_button.UseVisualStyleBackColor = true;
@@ -58,50 +60,48 @@
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(44, 95);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(29, 62);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(190, 20);
+            this.label3.Size = new System.Drawing.Size(127, 13);
             this.label3.TabIndex = 22;
             this.label3.Text = "Фамилия";
             // 
             // LastName_textBox
             // 
-            this.LastName_textBox.Location = new System.Drawing.Point(49, 120);
-            this.LastName_textBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.LastName_textBox.Location = new System.Drawing.Point(33, 78);
             this.LastName_textBox.Name = "LastName_textBox";
-            this.LastName_textBox.Size = new System.Drawing.Size(354, 26);
+            this.LastName_textBox.Size = new System.Drawing.Size(237, 20);
             this.LastName_textBox.TabIndex = 21;
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(44, 35);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(29, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(190, 20);
+            this.label1.Size = new System.Drawing.Size(127, 13);
             this.label1.TabIndex = 20;
             this.label1.Text = "Имя";
             // 
             // FirstName_textBox
             // 
-            this.FirstName_textBox.Location = new System.Drawing.Point(49, 60);
-            this.FirstName_textBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.FirstName_textBox.Location = new System.Drawing.Point(33, 39);
             this.FirstName_textBox.Name = "FirstName_textBox";
-            this.FirstName_textBox.Size = new System.Drawing.Size(354, 26);
+            this.FirstName_textBox.Size = new System.Drawing.Size(237, 20);
             this.FirstName_textBox.TabIndex = 19;
             // 
             // AddPersonForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(456, 256);
+            this.ClientSize = new System.Drawing.Size(304, 166);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.LastName_textBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.FirstName_textBox);
             this.Controls.Add(this.Cancel_button);
             this.Controls.Add(this.Add_button);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AddPersonForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddPersonForm";
             this.ResumeLayout(false);
             this.PerformLayout();

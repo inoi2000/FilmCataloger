@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FilmCataloger.Services
+namespace FilmCataloger.Model
 {
-    public interface IEntity
+    public enum Gender
     {
-        int Id { get; set; }
-        string PictureRef { get; set; }
+        Мужской,
+        Женский
     }
 }
