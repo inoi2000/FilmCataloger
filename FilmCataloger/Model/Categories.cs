@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FilmCataloger.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FilmCataloger.Model
 {
-    public class Categories
+    public class Categories : IEntity
     {
         public int Id { get; set; }
         public string Name { get; set; }
