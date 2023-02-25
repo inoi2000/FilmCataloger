@@ -21,8 +21,24 @@ namespace FilmCataloger.View.AdminForms
             GenresService.Instance.GetAllObjects().ToList().ForEach(obj => Genres_checkedListBox.Items.Add(obj));
             CountryService.Instance.GetAllObjects().ToList().ForEach(obj => Countries_checkedListBox.Items.Add(obj));
             AgeLimit_comboBox.SelectedIndex= 0;
+            Persons_listBox.DoubleClick += Persons_listBox_DoubleClick;
+            RelatedFilms_listBox.DoubleClick += RelatedFilms_listBox_DoubleClick;
+        }
+        private void RelatedFilms_listBox_DoubleClick(object sender, EventArgs e)
+        {
+            if (RelatedFilms_listBox.SelectedItem != null)
+            {
+                RelatedFilms_listBox.Items.Remove(RelatedFilms_listBox.SelectedItem);
+            }
         }
 
+        private void Persons_listBox_DoubleClick(object sender, EventArgs e)
+        {
+            if (Persons_listBox.SelectedItem != null)
+            {
+                Persons_listBox.Items.Remove(Persons_listBox.SelectedItem);
+            }
+        }
         private void CreateFilm_button_Click(object sender, EventArgs e)
         {
             // Creating new Film
@@ -41,6 +57,15 @@ namespace FilmCataloger.View.AdminForms
             foreach (Countries item in Countries_checkedListBox.CheckedItems)
             {
                 newFilm.Countries.Add(item);
+            }
+            foreach (Persons item in Persons_listBox.Items)
+            {
+                newFilm.Persons.Add(item);
+            }
+            foreach (Films item in RelatedFilms_listBox.Items)
+            {
+                if (newFilm == item) { continue; }
+                newFilm.RelatedFilms.Add(item);
             }
             FurtherInfo newFurtherInfo = new FurtherInfo
             {

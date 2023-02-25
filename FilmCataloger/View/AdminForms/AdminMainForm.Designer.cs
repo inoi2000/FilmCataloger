@@ -30,6 +30,8 @@
         {
             this.CreatePerson_button = new System.Windows.Forms.Button();
             this.CreateFilm_button = new System.Windows.Forms.Button();
+            this.ChangePersonInfo_button = new System.Windows.Forms.Button();
+            this.ChangeFilmInfo_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CreatePerson_button
@@ -52,11 +54,33 @@
             this.CreateFilm_button.UseVisualStyleBackColor = true;
             this.CreateFilm_button.Click += new System.EventHandler(this.CreateFilm_button_Click);
             // 
+            // ChangePersonInfo_button
+            // 
+            this.ChangePersonInfo_button.Location = new System.Drawing.Point(227, 90);
+            this.ChangePersonInfo_button.Name = "ChangePersonInfo_button";
+            this.ChangePersonInfo_button.Size = new System.Drawing.Size(118, 45);
+            this.ChangePersonInfo_button.TabIndex = 5;
+            this.ChangePersonInfo_button.Text = "ChangePersonInfo";
+            this.ChangePersonInfo_button.UseVisualStyleBackColor = true;
+            this.ChangePersonInfo_button.Click += new System.EventHandler(this.ChangePersonInfo_button_Click);
+            // 
+            // ChangeFilmInfo_button
+            // 
+            this.ChangeFilmInfo_button.Location = new System.Drawing.Point(41, 90);
+            this.ChangeFilmInfo_button.Name = "ChangeFilmInfo_button";
+            this.ChangeFilmInfo_button.Size = new System.Drawing.Size(118, 45);
+            this.ChangeFilmInfo_button.TabIndex = 4;
+            this.ChangeFilmInfo_button.Text = "ChangeFilmInfo";
+            this.ChangeFilmInfo_button.UseVisualStyleBackColor = true;
+            this.ChangeFilmInfo_button.Click += new System.EventHandler(this.ChangeFilmInfo_button_Click);
+            // 
             // AdminMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(408, 121);
+            this.ClientSize = new System.Drawing.Size(408, 170);
+            this.Controls.Add(this.ChangePersonInfo_button);
+            this.Controls.Add(this.ChangeFilmInfo_button);
             this.Controls.Add(this.CreatePerson_button);
             this.Controls.Add(this.CreateFilm_button);
             this.Name = "AdminMainForm";
@@ -70,5 +94,7 @@
 
         private System.Windows.Forms.Button CreatePerson_button;
         private System.Windows.Forms.Button CreateFilm_button;
+        private System.Windows.Forms.Button ChangePersonInfo_button;
+        private System.Windows.Forms.Button ChangeFilmInfo_button;
     }
 }

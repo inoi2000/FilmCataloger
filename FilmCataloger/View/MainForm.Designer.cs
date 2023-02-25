@@ -48,9 +48,10 @@
             this.Films_listView.HideSelection = false;
             this.Films_listView.Location = new System.Drawing.Point(12, 127);
             this.Films_listView.Name = "Films_listView";
-            this.Films_listView.Size = new System.Drawing.Size(776, 149);
+            this.Films_listView.Size = new System.Drawing.Size(751, 149);
             this.Films_listView.TabIndex = 0;
             this.Films_listView.UseCompatibleStateImageBehavior = false;
+            this.Films_listView.DoubleClick += new System.EventHandler(this.Films_listView_DoubleClick);
             // 
             // groupBox1
             // 
@@ -60,20 +61,20 @@
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(776, 59);
+            this.groupBox1.Size = new System.Drawing.Size(751, 59);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(518, 24);
+            this.textBox1.Location = new System.Drawing.Point(478, 24);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(183, 20);
             this.textBox1.TabIndex = 10;
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(742, 19);
+            this.button6.Location = new System.Drawing.Point(702, 19);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(28, 28);
             this.button6.TabIndex = 9;
@@ -81,7 +82,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(707, 19);
+            this.button5.Location = new System.Drawing.Point(667, 19);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(29, 28);
             this.button5.TabIndex = 8;
@@ -104,6 +105,7 @@
             this.FilmsCatalog_button.TabIndex = 2;
             this.FilmsCatalog_button.Text = "ФИЛЬМЫ";
             this.FilmsCatalog_button.UseVisualStyleBackColor = true;
+            this.FilmsCatalog_button.Click += new System.EventHandler(this.FilmsCatalog_button_Click);
             // 
             // PersonsCatalog_button
             // 
@@ -113,15 +115,17 @@
             this.PersonsCatalog_button.TabIndex = 4;
             this.PersonsCatalog_button.Text = "ДЕЯТЕЛИ КИНО";
             this.PersonsCatalog_button.UseVisualStyleBackColor = true;
+            this.PersonsCatalog_button.Click += new System.EventHandler(this.PersonsCatalog_button_Click);
             // 
             // Persons_listView
             // 
             this.Persons_listView.HideSelection = false;
             this.Persons_listView.Location = new System.Drawing.Point(12, 326);
             this.Persons_listView.Name = "Persons_listView";
-            this.Persons_listView.Size = new System.Drawing.Size(776, 138);
+            this.Persons_listView.Size = new System.Drawing.Size(751, 138);
             this.Persons_listView.TabIndex = 3;
             this.Persons_listView.UseCompatibleStateImageBehavior = false;
+            this.Persons_listView.DoubleClick += new System.EventHandler(this.Persons_listView_DoubleClick);
             // 
             // CategoriesCatalog_button
             // 
@@ -131,20 +135,22 @@
             this.CategoriesCatalog_button.TabIndex = 6;
             this.CategoriesCatalog_button.Text = "КАТЕГОРИИ";
             this.CategoriesCatalog_button.UseVisualStyleBackColor = true;
+            this.CategoriesCatalog_button.Click += new System.EventHandler(this.CategoriesCatalog_button_Click);
             // 
             // Category_listView
             // 
             this.Category_listView.HideSelection = false;
             this.Category_listView.Location = new System.Drawing.Point(12, 514);
             this.Category_listView.Name = "Category_listView";
-            this.Category_listView.Size = new System.Drawing.Size(776, 136);
+            this.Category_listView.Size = new System.Drawing.Size(751, 136);
             this.Category_listView.TabIndex = 5;
             this.Category_listView.UseCompatibleStateImageBehavior = false;
+            this.Category_listView.DoubleClick += new System.EventHandler(this.Category_listView_DoubleClick);
             // 
             // Admin_linkLabel
             // 
             this.Admin_linkLabel.AutoSize = true;
-            this.Admin_linkLabel.Location = new System.Drawing.Point(675, 666);
+            this.Admin_linkLabel.Location = new System.Drawing.Point(635, 666);
             this.Admin_linkLabel.Name = "Admin_linkLabel";
             this.Admin_linkLabel.Size = new System.Drawing.Size(107, 13);
             this.Admin_linkLabel.TabIndex = 7;
@@ -156,7 +162,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 688);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(780, 689);
             this.Controls.Add(this.Admin_linkLabel);
             this.Controls.Add(this.CategoriesCatalog_button);
             this.Controls.Add(this.Category_listView);
@@ -166,6 +173,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Films_listView);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Главное меню";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FilmCataloger.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,15 @@ namespace FilmCataloger.View.CatalogForms
         public PersonsCatalogForm()
         {
             InitializeComponent();
+            ImageList personsImagelist = new ImageList();
+            try
+            {
+                ViewService.FillingListView(PersonService.Instance.GetAllObjects(), Persons_listView, personsImagelist);
+            }
+            catch (System.Net.WebException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

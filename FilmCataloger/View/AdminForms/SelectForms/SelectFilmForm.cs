@@ -10,17 +10,30 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FilmCataloger.View.AdminForms.CreateFilmForms
+namespace FilmCataloger.View.AdminForms.SelectForms
 {
-    public partial class AddRelatedFilmForm : Form
+    public partial class SelectFilmForm : Form
     {
-        ListBox RelatedFilm_ListBox;
-        public AddRelatedFilmForm(ref ListBox RelatedFilm_ListBox)
+        public SelectFilmForm()
         {
             InitializeComponent();
-            this.RelatedFilm_ListBox = RelatedFilm_ListBox;
-        }
 
+            ImageList filmsImagelist = new ImageList();
+            try
+            {
+                ViewService.FillingListView(FilmService.Instance.GetAllObjects(), Films_listView, filmsImagelist);
+            }
+            catch (System.Net.WebException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            Films_listView.DoubleClick += Films_listView_DoubleClick;
+        }
+        private void Films_listView_DoubleClick(object sender, EventArgs e)
+        {
+            Films film = FilmService.Instance.GetObject(int.Parse(Films_listView.FocusedItem.ImageKey));
+            new ChangeFilmInfoForm(film).ShowDialog();
+        }
         private void Add_button_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(Name_textBox.Text))
@@ -35,14 +48,14 @@ namespace FilmCataloger.View.AdminForms.CreateFilmForms
                     MessageBox.Show("Такой фильм еще не добавлен в приложение");
                     return;
                 }
-                RelatedFilm_ListBox.Items.Add(film);
+                new ChangeFilmInfoForm(film).ShowDialog();
             }
             this.DialogResult = DialogResult.OK;
         }
 
         private void Cancel_button_Click(object sender, EventArgs e)
         {
-            DialogResult= DialogResult.Cancel;
+            DialogResult = DialogResult.Cancel;
         }
     }
 }

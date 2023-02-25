@@ -1,6 +1,8 @@
 ﻿using FilmCataloger.Model;
 using FilmCataloger.Services;
 using FilmCataloger.View.AdminForms;
+using FilmCataloger.View.CatalogForms;
+using FilmCataloger.View.InfoForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -48,5 +50,42 @@ namespace FilmCataloger.View
             }
         }
 
+        private void FilmsCatalog_button_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            new FilmsCatalogForm().ShowDialog();
+            this.Visible = true;
+        }
+
+        private void PersonsCatalog_button_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            new PersonsCatalogForm().ShowDialog();
+            this.Visible = true;
+        }
+
+        private void CategoriesCatalog_button_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            new CategoriesCatalogForm().ShowDialog();
+            this.Visible = true;
+        }
+
+        private void Films_listView_DoubleClick(object sender, EventArgs e)
+        {
+            Films film = FilmService.Instance.GetObject(int.Parse(Films_listView.FocusedItem.ImageKey));
+            new FilmInfoForm(film).Show();
+        }
+
+        private void Persons_listView_DoubleClick(object sender, EventArgs e)
+        {
+            Persons person = PersonService.Instance.GetObject(int.Parse(Persons_listView.FocusedItem.ImageKey));
+            new PersonInfoForm(person).Show();
+        }
+
+        private void Category_listView_DoubleClick(object sender, EventArgs e)
+        {
+
+        }
     }
 }

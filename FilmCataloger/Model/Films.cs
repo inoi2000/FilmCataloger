@@ -23,6 +23,10 @@ namespace FilmCataloger.Model
         public ICollection<Genres> Genres { get; set; } = new List<Genres>();
         public ICollection<Persons> Persons { get; set; } = new List<Persons>();
         public ICollection<Countries> Countries { get; set; } = new List<Countries>();
-        public ICollection<Categories> Categories { get; set; } = new List<Categories>();
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

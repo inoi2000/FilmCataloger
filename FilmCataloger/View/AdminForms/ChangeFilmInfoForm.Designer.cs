@@ -163,6 +163,7 @@
             this.AddRelatedFilm_button.TabIndex = 45;
             this.AddRelatedFilm_button.Text = "Добавить связанный фильм";
             this.AddRelatedFilm_button.UseVisualStyleBackColor = true;
+            this.AddRelatedFilm_button.Click += new System.EventHandler(this.AddRelatedFilm_button_Click);
             // 
             // AddPerson_button
             // 
@@ -172,6 +173,7 @@
             this.AddPerson_button.TabIndex = 44;
             this.AddPerson_button.Text = "Добавить создателя / актера";
             this.AddPerson_button.UseVisualStyleBackColor = true;
+            this.AddPerson_button.Click += new System.EventHandler(this.AddPerson_button_Click);
             // 
             // CreateFilm_button
             // 
@@ -181,6 +183,7 @@
             this.CreateFilm_button.TabIndex = 43;
             this.CreateFilm_button.Text = "Сохранить изменения";
             this.CreateFilm_button.UseVisualStyleBackColor = true;
+            this.CreateFilm_button.Click += new System.EventHandler(this.CreateFilm_button_Click);
             // 
             // label7
             // 
@@ -335,7 +338,7 @@
             this.Controls.Add(this.Production_dateTimePicker);
             this.Controls.Add(this.IMDb_numericUpDown);
             this.Controls.Add(this.Name_textBox);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ChangeFilmInfoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ChangeFilmInfoForm";

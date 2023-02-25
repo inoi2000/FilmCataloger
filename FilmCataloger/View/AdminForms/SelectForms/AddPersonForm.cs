@@ -1,5 +1,6 @@
 ﻿using FilmCataloger.Model;
 using FilmCataloger.Services;
+using FilmCataloger.View.InfoForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,30 @@ namespace FilmCataloger.View.AdminForms.CreateFilmForms
         {
             InitializeComponent();
             this.person_ListBox = person_ListBox;
+
+            ImageList personsImagelist = new ImageList();
+            try
+            {
+                ViewService.FillingListView(PersonService.Instance.GetAllObjects(), Persons_listView, personsImagelist);
+            }
+            catch (System.Net.WebException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            Persons_listView.DoubleClick += Persons_listView_DoubleClick;
+        }
+
+        private void Persons_listView_DoubleClick(object sender, EventArgs e)
+        {
+            Persons person = PersonService.Instance.GetObject(int.Parse(Persons_listView.FocusedItem.ImageKey));
+            if (person_ListBox.Items.Contains(person)) 
+            {
+                MessageBox.Show($"Вы уже добавили {person.FirstName} {person.LastName} в список");
+            }
+            else 
+            {
+                person_ListBox.Items.Add(person);
+            }            
         }
 
         private void Add_button_Click(object sender, EventArgs e)

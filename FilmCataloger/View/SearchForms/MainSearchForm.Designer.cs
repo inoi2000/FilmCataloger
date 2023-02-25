@@ -1,6 +1,6 @@
-﻿namespace FilmCataloger.View.InfoForms
+﻿namespace FilmCataloger.View.SearchForms
 {
-    partial class CategoryInfoForm
+    partial class MainSearchForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // CategoryInfoForm
+            // MainSearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "CategoryInfoForm";
+            this.Name = "MainSearchForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CategoryInfoForm";
+            this.Text = "MainSearchForm";
             this.ResumeLayout(false);
 
         }
