@@ -29,9 +29,9 @@ namespace FilmCataloger.Services
             _context.Films.Add(newFilm);
             int res = _context.SaveChanges();
             if (res == 0) { throw new Exception(); }
-            entity.RelatedFilms.ToList().ForEach(rf => { rf.RelatedFilms.Add(entity); });
-            res = _context.SaveChanges();
-            if (res == 0) { throw new Exception(); }
+            //entity.RelatedFilms.ToList().ForEach(rf => { rf.RelatedFilms.Add(entity); });
+            //res = _context.SaveChanges();
+            //if (res == 0) { throw new Exception(); }
             return newFilm;
         }
 
@@ -107,7 +107,7 @@ namespace FilmCataloger.Services
 
         public ICollection<Films> GetAllObjects()
         {
-            return _context.Films.ToList();
+            return _context.Films.Include("FurtherInfo_FK").Include("Persons").Include("Genres").Include("Countries").ToList();
         }
 
         public bool RemoveObject(int id)

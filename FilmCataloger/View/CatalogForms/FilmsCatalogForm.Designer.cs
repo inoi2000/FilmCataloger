@@ -34,15 +34,21 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.Genres_comboBox = new System.Windows.Forms.ComboBox();
+            this.Countries_comboBox = new System.Windows.Forms.ComboBox();
+            this.IMDb_comboBox = new System.Windows.Forms.ComboBox();
+            this.Sort_comboBox = new System.Windows.Forms.ComboBox();
+            this.Year_dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.Year_checkBox = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Films_listView
             // 
             this.Films_listView.HideSelection = false;
-            this.Films_listView.Location = new System.Drawing.Point(12, 77);
+            this.Films_listView.Location = new System.Drawing.Point(12, 112);
             this.Films_listView.Name = "Films_listView";
-            this.Films_listView.Size = new System.Drawing.Size(751, 435);
+            this.Films_listView.Size = new System.Drawing.Size(751, 400);
             this.Films_listView.TabIndex = 5;
             this.Films_listView.UseCompatibleStateImageBehavior = false;
             // 
@@ -90,11 +96,93 @@
             this.button4.Text = "главное меню";
             this.button4.UseVisualStyleBackColor = true;
             // 
+            // Genres_comboBox
+            // 
+            this.Genres_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Genres_comboBox.FormattingEnabled = true;
+            this.Genres_comboBox.Items.AddRange(new object[] {
+            "Жанры"});
+            this.Genres_comboBox.Location = new System.Drawing.Point(20, 86);
+            this.Genres_comboBox.Name = "Genres_comboBox";
+            this.Genres_comboBox.Size = new System.Drawing.Size(104, 21);
+            this.Genres_comboBox.TabIndex = 6;
+            // 
+            // Countries_comboBox
+            // 
+            this.Countries_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Countries_comboBox.FormattingEnabled = true;
+            this.Countries_comboBox.Items.AddRange(new object[] {
+            "Страна"});
+            this.Countries_comboBox.Location = new System.Drawing.Point(130, 86);
+            this.Countries_comboBox.Name = "Countries_comboBox";
+            this.Countries_comboBox.Size = new System.Drawing.Size(104, 21);
+            this.Countries_comboBox.TabIndex = 8;
+            // 
+            // IMDb_comboBox
+            // 
+            this.IMDb_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.IMDb_comboBox.FormattingEnabled = true;
+            this.IMDb_comboBox.Items.AddRange(new object[] {
+            "Рейтинг",
+            "от 9",
+            "от 8",
+            "от 7",
+            "от 6",
+            "от 5",
+            "от 4",
+            "от 3",
+            "от 2",
+            "от 1",
+            "от 0"});
+            this.IMDb_comboBox.Location = new System.Drawing.Point(240, 86);
+            this.IMDb_comboBox.Name = "IMDb_comboBox";
+            this.IMDb_comboBox.Size = new System.Drawing.Size(104, 21);
+            this.IMDb_comboBox.TabIndex = 9;
+            // 
+            // Sort_comboBox
+            // 
+            this.Sort_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Sort_comboBox.FormattingEnabled = true;
+            this.Sort_comboBox.Items.AddRange(new object[] {
+            "По умолчанию",
+            "По рейтингу",
+            "По алфавиту",
+            "По дате выхода",
+            "По сборам"});
+            this.Sort_comboBox.Location = new System.Drawing.Point(549, 86);
+            this.Sort_comboBox.Name = "Sort_comboBox";
+            this.Sort_comboBox.Size = new System.Drawing.Size(214, 21);
+            this.Sort_comboBox.TabIndex = 10;
+            // 
+            // Year_dateTimePicker
+            // 
+            this.Year_dateTimePicker.CustomFormat = "yyyy";
+            this.Year_dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Year_dateTimePicker.Location = new System.Drawing.Point(350, 87);
+            this.Year_dateTimePicker.Name = "Year_dateTimePicker";
+            this.Year_dateTimePicker.Size = new System.Drawing.Size(67, 20);
+            this.Year_dateTimePicker.TabIndex = 11;
+            // 
+            // Year_checkBox
+            // 
+            this.Year_checkBox.AutoSize = true;
+            this.Year_checkBox.Location = new System.Drawing.Point(423, 90);
+            this.Year_checkBox.Name = "Year_checkBox";
+            this.Year_checkBox.Size = new System.Drawing.Size(10, 9);
+            this.Year_checkBox.TabIndex = 12;
+            this.Year_checkBox.UseVisualStyleBackColor = true;
+            // 
             // FilmsCatalogForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(782, 529);
+            this.Controls.Add(this.Year_checkBox);
+            this.Controls.Add(this.Year_dateTimePicker);
+            this.Controls.Add(this.Sort_comboBox);
+            this.Controls.Add(this.IMDb_comboBox);
+            this.Controls.Add(this.Countries_comboBox);
+            this.Controls.Add(this.Genres_comboBox);
             this.Controls.Add(this.Films_listView);
             this.Controls.Add(this.groupBox1);
             this.Name = "FilmsCatalogForm";
@@ -103,6 +191,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -114,5 +203,11 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.ComboBox Genres_comboBox;
+        private System.Windows.Forms.ComboBox Countries_comboBox;
+        private System.Windows.Forms.ComboBox IMDb_comboBox;
+        private System.Windows.Forms.ComboBox Sort_comboBox;
+        private System.Windows.Forms.DateTimePicker Year_dateTimePicker;
+        private System.Windows.Forms.CheckBox Year_checkBox;
     }
 }
