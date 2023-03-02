@@ -31,9 +31,9 @@
             this.Films_listView = new System.Windows.Forms.ListView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.SearchPlus_button = new System.Windows.Forms.Button();
+            this.Search_button = new System.Windows.Forms.Button();
+            this.MainMenu_button = new System.Windows.Forms.Button();
             this.FilmsCatalog_button = new System.Windows.Forms.Button();
             this.PersonsCatalog_button = new System.Windows.Forms.Button();
             this.Persons_listView = new System.Windows.Forms.ListView();
@@ -56,9 +56,9 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.button6);
-            this.groupBox1.Controls.Add(this.button5);
-            this.groupBox1.Controls.Add(this.button4);
+            this.groupBox1.Controls.Add(this.SearchPlus_button);
+            this.groupBox1.Controls.Add(this.Search_button);
+            this.groupBox1.Controls.Add(this.MainMenu_button);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(751, 59);
@@ -72,30 +72,34 @@
             this.textBox1.Size = new System.Drawing.Size(183, 20);
             this.textBox1.TabIndex = 10;
             // 
-            // button6
+            // SearchPlus_button
             // 
-            this.button6.Location = new System.Drawing.Point(702, 19);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(28, 28);
-            this.button6.TabIndex = 9;
-            this.button6.UseVisualStyleBackColor = true;
+            this.SearchPlus_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.SearchPlus_button.Location = new System.Drawing.Point(702, 19);
+            this.SearchPlus_button.Name = "SearchPlus_button";
+            this.SearchPlus_button.Size = new System.Drawing.Size(28, 28);
+            this.SearchPlus_button.TabIndex = 9;
+            this.SearchPlus_button.UseVisualStyleBackColor = true;
+            this.SearchPlus_button.Click += new System.EventHandler(this.SearchPlus_button_Click);
             // 
-            // button5
+            // Search_button
             // 
-            this.button5.Location = new System.Drawing.Point(667, 19);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(29, 28);
-            this.button5.TabIndex = 8;
-            this.button5.UseVisualStyleBackColor = true;
+            this.Search_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Search_button.Location = new System.Drawing.Point(667, 19);
+            this.Search_button.Name = "Search_button";
+            this.Search_button.Size = new System.Drawing.Size(29, 28);
+            this.Search_button.TabIndex = 8;
+            this.Search_button.UseVisualStyleBackColor = true;
+            this.Search_button.Click += new System.EventHandler(this.Search_button_Click);
             // 
-            // button4
+            // MainMenu_button
             // 
-            this.button4.Location = new System.Drawing.Point(6, 15);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(150, 38);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "главное меню";
-            this.button4.UseVisualStyleBackColor = true;
+            this.MainMenu_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.MainMenu_button.Location = new System.Drawing.Point(6, 15);
+            this.MainMenu_button.Name = "MainMenu_button";
+            this.MainMenu_button.Size = new System.Drawing.Size(150, 38);
+            this.MainMenu_button.TabIndex = 7;
+            this.MainMenu_button.UseVisualStyleBackColor = true;
             // 
             // FilmsCatalog_button
             // 
@@ -192,9 +196,9 @@
         private System.Windows.Forms.Button CategoriesCatalog_button;
         private System.Windows.Forms.ListView Category_listView;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button SearchPlus_button;
+        private System.Windows.Forms.Button Search_button;
+        private System.Windows.Forms.Button MainMenu_button;
         private System.Windows.Forms.LinkLabel Admin_linkLabel;
     }
 }

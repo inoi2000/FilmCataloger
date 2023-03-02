@@ -44,6 +44,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -88,6 +89,10 @@
     <Compile Include="Migrations\202302251111401_Change Categories.designer.cs">
       <DependentUpon>202302251111401_Change Categories.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202303021503281_udt Categories.cs" />
+    <Compile Include="Migrations\202303021503281_udt Categories.designer.cs">
+      <DependentUpon>202303021503281_udt Categories.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Categories.cs" />
     <Compile Include="Model\Countries.cs" />
@@ -100,6 +105,11 @@
     <Compile Include="Model\Profession.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Services\CategoryService.cs" />
     <Compile Include="Services\ContextService.cs" />
     <Compile Include="Services\CountryService.cs" />
@@ -248,15 +258,14 @@
     <EmbeddedResource Include="Migrations\202302251111401_Change Categories.resx">
       <DependentUpon>202302251111401_Change Categories.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
+    <EmbeddedResource Include="Migrations\202303021503281_udt Categories.resx">
+      <DependentUpon>202303021503281_udt Categories.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\AdminForms\AdminMainForm.resx">
       <DependentUpon>AdminMainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -328,7 +337,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="AppPictures\camera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AppPictures\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AppPictures\searchPlus.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

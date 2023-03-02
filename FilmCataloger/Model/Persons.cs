@@ -19,6 +19,7 @@ namespace FilmCataloger.Model
         public Countries Сountry { get; set; }
         public ICollection<Profession> Professions { get; set; } = new List<Profession>();
         public ICollection<Films> Films { get; set; }
+        public ICollection<Categories> Categories { get; set; } = new List<Categories>();
 
         public override string ToString()
         {

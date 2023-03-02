@@ -12,9 +12,11 @@ namespace FilmCataloger.View.SearchForms
 {
     public partial class FilmSearchForm : Form
     {
-        public FilmSearchForm()
+        ListBox films_ListBox;
+        public FilmSearchForm(ref ListBox films_ListBox)
         {
             InitializeComponent();
+            this.films_ListBox= films_ListBox;
         }
     }
 }

@@ -31,6 +31,8 @@ namespace FilmCataloger.View
 
         private void UpdateData()
         {
+            CategoryService.Instance.UpdateCatigories();
+
             Persons_listView.Items.Clear();
             Films_listView.Items.Clear();
             Category_listView.Items.Clear();
@@ -84,6 +86,17 @@ namespace FilmCataloger.View
         }
 
         private void Category_listView_DoubleClick(object sender, EventArgs e)
+        {
+            Categories category = CategoryService.Instance.GetObject(int.Parse(Category_listView.FocusedItem.ImageKey));
+            new CategoryInfoForm(category).Show();
+        }
+
+        private void Search_button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SearchPlus_button_Click(object sender, EventArgs e)
         {
 
         }
