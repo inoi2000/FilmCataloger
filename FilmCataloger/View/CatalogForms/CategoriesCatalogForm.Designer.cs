@@ -49,7 +49,7 @@
             this.Controls.Add(this.Category_listView);
             this.Name = "CategoriesCatalogForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CategoriesCatalogForm";
+            this.Text = "Каталог категорий";
             this.ResumeLayout(false);
 
         }

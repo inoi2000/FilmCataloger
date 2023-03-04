@@ -43,5 +43,21 @@ namespace FilmCataloger.Services
             return sortedFilms;
         }
 
+        // Person Sort
+        public static IEnumerable<Persons> NamePersonSort(ref IEnumerable<Persons> sortedPersons)
+        {
+            sortedPersons = from persons in sortedPersons
+                            orderby persons.FirstName
+                            select persons;
+            return sortedPersons;
+        }
+
+        public static IEnumerable<Persons> BirthDatePersonSort(ref IEnumerable<Persons> sortedPersons)
+        {
+            sortedPersons = from persons in sortedPersons
+                            orderby persons.BirthDate
+                            select persons;
+            return sortedPersons;
+        }
     }
 }

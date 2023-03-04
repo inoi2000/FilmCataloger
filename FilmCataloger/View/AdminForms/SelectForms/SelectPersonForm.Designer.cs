@@ -145,10 +145,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(770, 220);
             this.Controls.Add(this.tabControl1);
             this.Name = "SelectPersonForm";
-            this.Text = "SelectPersonForm";
+            this.Text = "Выбор деятеля кино";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

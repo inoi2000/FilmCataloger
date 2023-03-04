@@ -36,41 +36,41 @@
             // 
             // CreatePerson_button
             // 
-            this.CreatePerson_button.Location = new System.Drawing.Point(227, 30);
+            this.CreatePerson_button.Location = new System.Drawing.Point(218, 23);
             this.CreatePerson_button.Name = "CreatePerson_button";
-            this.CreatePerson_button.Size = new System.Drawing.Size(118, 45);
+            this.CreatePerson_button.Size = new System.Drawing.Size(135, 56);
             this.CreatePerson_button.TabIndex = 3;
-            this.CreatePerson_button.Text = "CreatePerson";
+            this.CreatePerson_button.Text = "Добавить деятеля кино";
             this.CreatePerson_button.UseVisualStyleBackColor = true;
             this.CreatePerson_button.Click += new System.EventHandler(this.CreatePerson_button_Click);
             // 
             // CreateFilm_button
             // 
-            this.CreateFilm_button.Location = new System.Drawing.Point(41, 30);
+            this.CreateFilm_button.Location = new System.Drawing.Point(32, 23);
             this.CreateFilm_button.Name = "CreateFilm_button";
-            this.CreateFilm_button.Size = new System.Drawing.Size(118, 45);
+            this.CreateFilm_button.Size = new System.Drawing.Size(135, 56);
             this.CreateFilm_button.TabIndex = 2;
-            this.CreateFilm_button.Text = "CreateFilm";
+            this.CreateFilm_button.Text = "Добавить фильм";
             this.CreateFilm_button.UseVisualStyleBackColor = true;
             this.CreateFilm_button.Click += new System.EventHandler(this.CreateFilm_button_Click);
             // 
             // ChangePersonInfo_button
             // 
-            this.ChangePersonInfo_button.Location = new System.Drawing.Point(227, 90);
+            this.ChangePersonInfo_button.Location = new System.Drawing.Point(218, 96);
             this.ChangePersonInfo_button.Name = "ChangePersonInfo_button";
-            this.ChangePersonInfo_button.Size = new System.Drawing.Size(118, 45);
+            this.ChangePersonInfo_button.Size = new System.Drawing.Size(135, 56);
             this.ChangePersonInfo_button.TabIndex = 5;
-            this.ChangePersonInfo_button.Text = "ChangePersonInfo";
+            this.ChangePersonInfo_button.Text = "Изменить информацию о деятеле кино";
             this.ChangePersonInfo_button.UseVisualStyleBackColor = true;
             this.ChangePersonInfo_button.Click += new System.EventHandler(this.ChangePersonInfo_button_Click);
             // 
             // ChangeFilmInfo_button
             // 
-            this.ChangeFilmInfo_button.Location = new System.Drawing.Point(41, 90);
+            this.ChangeFilmInfo_button.Location = new System.Drawing.Point(32, 96);
             this.ChangeFilmInfo_button.Name = "ChangeFilmInfo_button";
-            this.ChangeFilmInfo_button.Size = new System.Drawing.Size(118, 45);
+            this.ChangeFilmInfo_button.Size = new System.Drawing.Size(135, 56);
             this.ChangeFilmInfo_button.TabIndex = 4;
-            this.ChangeFilmInfo_button.Text = "ChangeFilmInfo";
+            this.ChangeFilmInfo_button.Text = "Изменить информацию о фильме";
             this.ChangeFilmInfo_button.UseVisualStyleBackColor = true;
             this.ChangeFilmInfo_button.Click += new System.EventHandler(this.ChangeFilmInfo_button_Click);
             // 
@@ -78,6 +78,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(408, 170);
             this.Controls.Add(this.ChangePersonInfo_button);
             this.Controls.Add(this.ChangeFilmInfo_button);
@@ -85,7 +86,7 @@
             this.Controls.Add(this.CreateFilm_button);
             this.Name = "AdminMainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AdminMainForm";
+            this.Text = "Панель управления";
             this.ResumeLayout(false);
 
         }

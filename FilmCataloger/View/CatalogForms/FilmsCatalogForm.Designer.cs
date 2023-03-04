@@ -104,6 +104,7 @@
             this.MainMenu_button.Size = new System.Drawing.Size(150, 38);
             this.MainMenu_button.TabIndex = 7;
             this.MainMenu_button.UseVisualStyleBackColor = false;
+            this.MainMenu_button.Click += new System.EventHandler(this.MainMenu_button_Click);
             // 
             // Genres_comboBox
             // 
@@ -196,7 +197,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "FilmsCatalogForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FilmsCatalogForm";
+            this.Text = "Каталог фильмов";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

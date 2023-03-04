@@ -218,6 +218,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(817, 488);
             this.Controls.Add(this.Description_label);
             this.Controls.Add(this.RelatedFilms_listView);
@@ -240,7 +241,6 @@
             this.Controls.Add(this.Film_pictureBox);
             this.Name = "FilmInfoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FilmInfoForm";
             ((System.ComponentModel.ISupportInitialize)(this.Film_pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

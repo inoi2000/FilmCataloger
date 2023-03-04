@@ -74,6 +74,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(623, 530);
             this.Controls.Add(this.Name_label);
             this.Controls.Add(this.Category_listView);
@@ -81,7 +82,6 @@
             this.Controls.Add(this.Category_pictureBox);
             this.Name = "CategoryInfoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CategoryInfoForm";
             ((System.ComponentModel.ISupportInitialize)(this.Category_pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

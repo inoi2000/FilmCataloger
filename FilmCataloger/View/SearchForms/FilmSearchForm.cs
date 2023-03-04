@@ -21,10 +21,10 @@ namespace FilmCataloger.View.SearchForms
         public FilmSearchForm(ref ListView films_ListView)
         {
             InitializeComponent();
+            this.films_ListView = films_ListView;
             GenresService.Instance.GetAllObjects().ToList().ForEach(obj => Genres_checkedListBox.Items.Add(obj));
             CountryService.Instance.GetAllObjects().ToList().ForEach(obj => Countries_checkedListBox.Items.Add(obj));
             Persons_listBox.DoubleClick += Persons_listBox_DoubleClick;
-            this.films_ListView = films_ListView;
             Name_textBox.Enabled = false;
             Genres_checkedListBox.Enabled = false;
             Countries_checkedListBox.Enabled = false;

@@ -122,6 +122,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(700, 335);
             this.Controls.Add(this.Country_label);
             this.Controls.Add(this.BirthDate_label);
@@ -134,7 +135,6 @@
             this.Controls.Add(this.Person_pictureBox);
             this.Name = "PersonInfoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PersonInfoForm";
             ((System.ComponentModel.ISupportInitialize)(this.Person_pictureBox)).EndInit();
             this.ResumeLayout(false);
 

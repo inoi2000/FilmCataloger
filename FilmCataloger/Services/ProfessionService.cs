@@ -34,12 +34,12 @@ namespace FilmCataloger.Services
 
         public Profession GetObject(int id)
         {
-            return _context.Professions.FirstOrDefault(profession => profession.Id == id);
+            return _context.Professions.Include("Persons").FirstOrDefault(profession => profession.Id == id);
         }
 
         public ICollection<Profession> GetAllObjects()
         {
-            return _context.Professions.ToList();
+            return _context.Professions.Include("Persons").ToList();
         }
 
         public bool RemoveObject(int id)

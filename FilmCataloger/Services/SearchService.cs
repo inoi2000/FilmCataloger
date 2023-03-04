@@ -107,5 +107,46 @@ namespace FilmCataloger.Services
                             select film;
             return searchedFilms;
         }
+
+        // Persons Search
+        public static IEnumerable<Persons> NamePersonSearch(ref IEnumerable<Persons> searchedPersons, string Name)
+        {
+            Regex regex = new Regex($"(\\w*){Name}(\\w*)", RegexOptions.IgnoreCase);
+            searchedPersons = from person in searchedPersons
+                              where regex.IsMatch($"{person.FirstName} {person.LastName}")
+                            select person;
+            return searchedPersons;
+        }
+        public static IEnumerable<Persons> BirthDatePersonSearch(ref IEnumerable<Persons> searchedPersons, DateTime birthDate)
+        {
+            searchedPersons = from person in searchedPersons
+                              where person.BirthDate== birthDate
+                              select person;
+            return searchedPersons;
+        }
+
+        public static IEnumerable<Persons> ProfessionPersonSearch(ref IEnumerable<Persons> searchedPersons, Profession profession)
+        {
+            searchedPersons = from person in searchedPersons
+                              where person.Professions.Contains(profession)
+                              select person;
+            return searchedPersons;
+        }
+
+        public static IEnumerable<Persons> CountryPersonSearch(ref IEnumerable<Persons> searchedPersons, Countries country)
+        {
+            searchedPersons = from person in searchedPersons
+                              where person.Сountry == country
+                              select person;
+            return searchedPersons;
+        }
+
+        public static IEnumerable<Persons> GenderPersonSearch(ref IEnumerable<Persons> searchedPersons, Gender gender)
+        {
+            searchedPersons = from person in searchedPersons
+                              where person.Gender == gender
+                              select person;
+            return searchedPersons;
+        }
     }
 }

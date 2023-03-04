@@ -93,6 +93,10 @@
     <Compile Include="Migrations\202303021503281_udt Categories.designer.cs">
       <DependentUpon>202303021503281_udt Categories.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202303041309113_upd Profession.cs" />
+    <Compile Include="Migrations\202303041309113_upd Profession.designer.cs">
+      <DependentUpon>202303041309113_upd Profession.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Categories.cs" />
     <Compile Include="Model\Countries.cs" />
@@ -224,12 +228,6 @@
     <Compile Include="View\SearchForms\FilmSearchForm.Designer.cs">
       <DependentUpon>FilmSearchForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\SearchForms\MainSearchForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\SearchForms\MainSearchForm.Designer.cs">
-      <DependentUpon>MainSearchForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\SearchForms\PersonSearchForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -262,6 +260,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202303021503281_udt Categories.resx">
       <DependentUpon>202303021503281_udt Categories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303041309113_upd Profession.resx">
+      <DependentUpon>202303041309113_upd Profession.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -318,9 +319,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\SearchForms\FilmSearchForm.resx">
       <DependentUpon>FilmSearchForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\SearchForms\MainSearchForm.resx">
-      <DependentUpon>MainSearchForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\SearchForms\PersonSearchForm.resx">
       <DependentUpon>PersonSearchForm.cs</DependentUpon>

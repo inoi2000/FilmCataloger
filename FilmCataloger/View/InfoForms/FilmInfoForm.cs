@@ -17,6 +17,13 @@ namespace FilmCataloger.View.InfoForms
         public FilmInfoForm(Films film)
         {
             InitializeComponent();
+
+            this.Text = film.Name;
+
+            Persons_listView.DoubleClick += Persons_listView_DoubleClick;
+            RelatedFilms_listView.DoubleClick += RelatedFilms_listView_DoubleClick;
+
+
             Film_pictureBox.Load(film.PictureRef);
             Name_label.Text = film.Name;
             IMDb_label.Text = film.IMDb.ToString();
@@ -41,6 +48,18 @@ namespace FilmCataloger.View.InfoForms
                 MessageBox.Show(ex.Message);
             }
 
+        }
+
+        private void RelatedFilms_listView_DoubleClick(object sender, EventArgs e)
+        {
+            Films film = FilmService.Instance.GetObject(int.Parse(RelatedFilms_listView.FocusedItem.ImageKey));
+            new FilmInfoForm(film).Show();
+        }
+
+        private void Persons_listView_DoubleClick(object sender, EventArgs e)
+        {
+            Persons person = PersonService.Instance.GetObject(int.Parse(Persons_listView.FocusedItem.ImageKey));
+            new PersonInfoForm(person).Show();
         }
     }
 }

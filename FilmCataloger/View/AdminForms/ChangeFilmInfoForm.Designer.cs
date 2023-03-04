@@ -310,6 +310,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1052, 636);
             this.Controls.Add(this.AgeLimit_comboBox);
             this.Controls.Add(this.label12);
@@ -341,7 +342,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ChangeFilmInfoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ChangeFilmInfoForm";
+            this.Text = "Изменение информации о фильме";
             ((System.ComponentModel.ISupportInitialize)(this.Fees_numericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IMDb_numericUpDown)).EndInit();
             this.ResumeLayout(false);

@@ -160,5 +160,10 @@ namespace FilmCataloger.View.CatalogForms
             }
 
         }
+
+        private void MainMenu_button_Click(object sender, EventArgs e)
+        {
+            DialogResult= DialogResult.OK;
+        }
     }
 }

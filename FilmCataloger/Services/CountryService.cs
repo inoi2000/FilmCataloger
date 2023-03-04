@@ -34,12 +34,12 @@ namespace FilmCataloger.Services
 
         public Countries GetObject(int id)
         {
-            return _context.Countries.FirstOrDefault(country => country.Id == id);
+            return _context.Countries.Include("Films").Include("Persons").FirstOrDefault(country => country.Id == id);
         }
 
         public ICollection<Countries> GetAllObjects()
         {
-            return _context.Countries.ToList();
+            return _context.Countries.Include("Films").Include("Persons").ToList();
         }
 
         public bool RemoveObject(int id)

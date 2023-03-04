@@ -192,6 +192,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(305, 562);
             this.Controls.Add(this.Countries_comboBox);
             this.Controls.Add(this.label9);
@@ -209,7 +210,7 @@
             this.Controls.Add(this.FirstName_textBox);
             this.Name = "CreatePersonForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CreatePersonForm";
+            this.Text = "Добавление деятеля кино";
             this.Gender_groupBox.ResumeLayout(false);
             this.Gender_groupBox.PerformLayout();
             this.ResumeLayout(false);

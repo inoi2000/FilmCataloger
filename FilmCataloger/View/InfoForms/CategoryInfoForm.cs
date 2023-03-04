@@ -18,6 +18,7 @@ namespace FilmCataloger.View.InfoForms
         {
             InitializeComponent();
             Category_pictureBox.Load(category.PictureRef);
+            this.Text= category.Name;
             Name_label.Text = category.Name;
             Description_label.Text = category.Description;
 

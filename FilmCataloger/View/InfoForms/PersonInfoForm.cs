@@ -17,6 +17,8 @@ namespace FilmCataloger.View.InfoForms
         public PersonInfoForm(Persons person)
         {
             InitializeComponent();
+            this.Text = $"{person.FirstName} {person.LastName}";
+            Films_listView.DoubleClick += Films_listView_DoubleClick;
             Person_pictureBox.Load(person.PictureRef);
             Name_label.Text = $"{person.FirstName} {person.LastName}";
             BirthDate_label.Text = person.BirthDate.ToShortDateString();
@@ -32,6 +34,12 @@ namespace FilmCataloger.View.InfoForms
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void Films_listView_DoubleClick(object sender, EventArgs e)
+        {
+            Films film = FilmService.Instance.GetObject(int.Parse(Films_listView.FocusedItem.ImageKey));
+            new FilmInfoForm(film).Show();
         }
     }
 }
