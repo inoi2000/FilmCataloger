@@ -30,10 +30,10 @@
         {
             this.Films_listView = new System.Windows.Forms.ListView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.SearchField_textBox = new System.Windows.Forms.TextBox();
+            this.SearchPlus_button = new System.Windows.Forms.Button();
+            this.Search_button = new System.Windows.Forms.Button();
+            this.MainMenu_button = new System.Windows.Forms.Button();
             this.Genres_comboBox = new System.Windows.Forms.ComboBox();
             this.Countries_comboBox = new System.Windows.Forms.ComboBox();
             this.IMDb_comboBox = new System.Windows.Forms.ComboBox();
@@ -54,47 +54,56 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.button6);
-            this.groupBox1.Controls.Add(this.button5);
-            this.groupBox1.Controls.Add(this.button4);
+            this.groupBox1.Controls.Add(this.SearchField_textBox);
+            this.groupBox1.Controls.Add(this.SearchPlus_button);
+            this.groupBox1.Controls.Add(this.Search_button);
+            this.groupBox1.Controls.Add(this.MainMenu_button);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(751, 59);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             // 
-            // textBox1
+            // SearchField_textBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(478, 24);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(183, 20);
-            this.textBox1.TabIndex = 10;
+            this.SearchField_textBox.Location = new System.Drawing.Point(478, 24);
+            this.SearchField_textBox.Name = "SearchField_textBox";
+            this.SearchField_textBox.Size = new System.Drawing.Size(183, 20);
+            this.SearchField_textBox.TabIndex = 10;
             // 
-            // button6
+            // SearchPlus_button
             // 
-            this.button6.Location = new System.Drawing.Point(702, 19);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(28, 28);
-            this.button6.TabIndex = 9;
-            this.button6.UseVisualStyleBackColor = true;
+            this.SearchPlus_button.BackColor = System.Drawing.SystemColors.Control;
+            this.SearchPlus_button.BackgroundImage = global::FilmCataloger.Properties.Resources.searchPlus;
+            this.SearchPlus_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.SearchPlus_button.Location = new System.Drawing.Point(702, 19);
+            this.SearchPlus_button.Name = "SearchPlus_button";
+            this.SearchPlus_button.Size = new System.Drawing.Size(28, 28);
+            this.SearchPlus_button.TabIndex = 9;
+            this.SearchPlus_button.UseVisualStyleBackColor = false;
+            this.SearchPlus_button.Click += new System.EventHandler(this.SearchPlus_button_Click);
             // 
-            // button5
+            // Search_button
             // 
-            this.button5.Location = new System.Drawing.Point(667, 19);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(29, 28);
-            this.button5.TabIndex = 8;
-            this.button5.UseVisualStyleBackColor = true;
+            this.Search_button.BackgroundImage = global::FilmCataloger.Properties.Resources.search;
+            this.Search_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Search_button.Location = new System.Drawing.Point(667, 19);
+            this.Search_button.Name = "Search_button";
+            this.Search_button.Size = new System.Drawing.Size(29, 28);
+            this.Search_button.TabIndex = 8;
+            this.Search_button.UseVisualStyleBackColor = true;
+            this.Search_button.Click += new System.EventHandler(this.Search_button_Click);
             // 
-            // button4
+            // MainMenu_button
             // 
-            this.button4.Location = new System.Drawing.Point(6, 15);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(150, 38);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "главное меню";
-            this.button4.UseVisualStyleBackColor = true;
+            this.MainMenu_button.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.MainMenu_button.BackgroundImage = global::FilmCataloger.Properties.Resources.camera;
+            this.MainMenu_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.MainMenu_button.Location = new System.Drawing.Point(6, 15);
+            this.MainMenu_button.Name = "MainMenu_button";
+            this.MainMenu_button.Size = new System.Drawing.Size(150, 38);
+            this.MainMenu_button.TabIndex = 7;
+            this.MainMenu_button.UseVisualStyleBackColor = false;
             // 
             // Genres_comboBox
             // 
@@ -132,8 +141,7 @@
             "от 4",
             "от 3",
             "от 2",
-            "от 1",
-            "от 0"});
+            "от 1"});
             this.IMDb_comboBox.Location = new System.Drawing.Point(240, 86);
             this.IMDb_comboBox.Name = "IMDb_comboBox";
             this.IMDb_comboBox.Size = new System.Drawing.Size(104, 21);
@@ -168,7 +176,7 @@
             this.Year_checkBox.AutoSize = true;
             this.Year_checkBox.Location = new System.Drawing.Point(423, 90);
             this.Year_checkBox.Name = "Year_checkBox";
-            this.Year_checkBox.Size = new System.Drawing.Size(10, 9);
+            this.Year_checkBox.Size = new System.Drawing.Size(15, 14);
             this.Year_checkBox.TabIndex = 12;
             this.Year_checkBox.UseVisualStyleBackColor = true;
             // 
@@ -176,6 +184,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(782, 529);
             this.Controls.Add(this.Year_checkBox);
             this.Controls.Add(this.Year_dateTimePicker);
@@ -199,10 +208,10 @@
 
         private System.Windows.Forms.ListView Films_listView;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox SearchField_textBox;
+        private System.Windows.Forms.Button SearchPlus_button;
+        private System.Windows.Forms.Button Search_button;
+        private System.Windows.Forms.Button MainMenu_button;
         private System.Windows.Forms.ComboBox Genres_comboBox;
         private System.Windows.Forms.ComboBox Countries_comboBox;
         private System.Windows.Forms.ComboBox IMDb_comboBox;

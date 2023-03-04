@@ -119,6 +119,8 @@
     <Compile Include="Services\IService.cs" />
     <Compile Include="Services\PersonService.cs" />
     <Compile Include="Services\ProfessionService.cs" />
+    <Compile Include="Services\SearchService.cs" />
+    <Compile Include="Services\SortService.cs" />
     <Compile Include="Services\ViewService.cs" />
     <Compile Include="View\AdminForms\AdminMainForm.cs">
       <SubType>Form</SubType>

@@ -74,6 +74,7 @@
             // 
             // SearchPlus_button
             // 
+            this.SearchPlus_button.BackgroundImage = global::FilmCataloger.Properties.Resources.searchPlus;
             this.SearchPlus_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.SearchPlus_button.Location = new System.Drawing.Point(702, 19);
             this.SearchPlus_button.Name = "SearchPlus_button";
@@ -84,6 +85,7 @@
             // 
             // Search_button
             // 
+            this.Search_button.BackgroundImage = global::FilmCataloger.Properties.Resources.search;
             this.Search_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Search_button.Location = new System.Drawing.Point(667, 19);
             this.Search_button.Name = "Search_button";
@@ -94,6 +96,7 @@
             // 
             // MainMenu_button
             // 
+            this.MainMenu_button.BackgroundImage = global::FilmCataloger.Properties.Resources.camera;
             this.MainMenu_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.MainMenu_button.Location = new System.Drawing.Point(6, 15);
             this.MainMenu_button.Name = "MainMenu_button";
@@ -167,6 +170,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(780, 689);
             this.Controls.Add(this.Admin_linkLabel);
             this.Controls.Add(this.CategoriesCatalog_button);
