@@ -25,7 +25,7 @@ namespace FilmCataloger.Services
                     foreach (Films film in films)
                     {
                         ListViewItem listViewItem = new ListViewItem();
-                        listViewItem.Text = $"{film.IMDb} {film.Name}";
+                        listViewItem.Text = $"★{film.IMDb} {film.Name}";
                         listViewItem.ImageKey = film.Id.ToString();
 
                         //Download the Image
