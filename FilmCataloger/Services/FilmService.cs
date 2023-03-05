@@ -29,9 +29,6 @@ namespace FilmCataloger.Services
             _context.Films.Add(newFilm);
             int res = _context.SaveChanges();
             if (res == 0) { throw new Exception(); }
-            //entity.RelatedFilms.ToList().ForEach(rf => { rf.RelatedFilms.Add(entity); });
-            //res = _context.SaveChanges();
-            //if (res == 0) { throw new Exception(); }
             return newFilm;
         }
 
@@ -56,16 +53,10 @@ namespace FilmCataloger.Services
                 if (mainFilm.Duration != changeFilm.Duration) { mainFilm.Duration = changeFilm.Duration; }
 
                 mainFilm.Genres.Clear();
-                foreach (Genres item in changeFilm.Genres)
-                {
-                    mainFilm.Genres.Add(item);
-                }
+                foreach (Genres item in changeFilm.Genres) { mainFilm.Genres.Add(item); }
 
                 mainFilm.Countries.Clear();
-                foreach (Countries item in changeFilm.Countries)
-                {
-                    mainFilm.Countries.Add(item);
-                }
+                foreach (Countries item in changeFilm.Countries) { mainFilm.Countries.Add(item); }
 
                 FurtherInfo mainfurtherInfo = mainFilm.FurtherInfo_FK;
                 FurtherInfo changefurtherInfo = changeFilm.FurtherInfo_FK;
@@ -79,24 +70,12 @@ namespace FilmCataloger.Services
                     mainFilm.Persons.Add(item);
                 }
 
-                //mainFilm.RelatedFilms.ToList().ForEach(rf =>
-                //{
-                //    if (rf.RelatedFilms.Contains(mainFilm)) { rf.RelatedFilms.Remove(mainFilm); }
-                //});
-
                 mainFilm.RelatedFilms.Clear();
                 foreach (Films item in changeFilm.RelatedFilms)
                 {
                     if (mainFilm == item) { continue; }
                     mainFilm.RelatedFilms.Add(item);
                 }
-                //mainFilm.RelatedFilms.ToList().ForEach(rf => 
-                //{
-                //    if (!rf.RelatedFilms.Contains(mainFilm))
-                //    {
-                //        rf.RelatedFilms.Add(mainFilm);
-                //    }
-                //});
                 
                 _context.SaveChanges();
 

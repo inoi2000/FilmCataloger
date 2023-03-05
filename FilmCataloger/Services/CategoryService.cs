@@ -62,34 +62,39 @@ namespace FilmCataloger.Services
 
         public void UpdateCatigories()
         {
-            // отчистка связующих таблиц
-            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString))
+            try
             {
-                connection.Open();
-                using (SqlCommand command = new SqlCommand())
+                // отчистка связующих таблиц
+                using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString))
                 {
-                    command.Connection= connection;
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand())
+                    {
+                        command.Connection = connection;
 
-                    command.CommandText = "delete from FilmsCategories;";
-                    command.ExecuteNonQuery();
+                        command.CommandText = "delete from FilmsCategories;";
+                        command.ExecuteNonQuery();
 
-                    command.CommandText = "delete from PersonsCategories";
-                    command.ExecuteNonQuery();
+                        command.CommandText = "delete from PersonsCategories";
+                        command.ExecuteNonQuery();
+                    }
+                    connection.Close();
                 }
-                connection.Close();
-            }
 
-            // перезаполнение категорий
-            
-            UpdateAllCatigories();
-            _context.SaveChanges();
+                // перезаполнение категорий
+                UpdateAllCatigories();
+                _context.SaveChanges();
+            }
+            catch { }
         }
 
         private void CategoryRequest1()
         {
-            Categories category = _context.Categories.FirstOrDefault(c => c.Name == "Самый самый");
+            Categories category = _context.Categories.Include("Films").FirstOrDefault(c => c.Name == "Самый самый");
             if (category != null)
             {
+                category.Films.Clear();
+
                 //самый высокий по рейтингу
                 var mostRatingFilm = _context.Films.OrderByDescending(f => f.IMDb).FirstOrDefault();
                 if (!category.Films.Contains(mostRatingFilm) && mostRatingFilm != null) { category.Films.Add(mostRatingFilm); }
@@ -104,9 +109,11 @@ namespace FilmCataloger.Services
 
         private void CategoryRequest2()
         {
-            Categories category = _context.Categories.FirstOrDefault(c => c.Name == "Лучше чем \"Властелин колец: Возвращение короля\"");
+            Categories category = _context.Categories.Include("Films").FirstOrDefault(c => c.Name == "Лучше чем \"Властелин колец: Возвращение короля\"");
             if (category != null)
             {
+                category.Films.Clear();
+
                 var lordOfTheRing = _context.Films.FirstOrDefault(fl => fl.Name == "Властелин колец: Возвращение короля");
                 var Films = _context.Films.Where(f => f.IMDb > lordOfTheRing.IMDb);
                 if (Films.Count() > 0) Films.ToList().ForEach(f => category.Films.Add(f));
@@ -115,9 +122,11 @@ namespace FilmCataloger.Services
 
         private void CategoryRequest5()
         {
-            Categories category = _context.Categories.FirstOrDefault(c => c.Name == "Страна рекордсмен по съемкам");
+            Categories category = _context.Categories.Include("Films").FirstOrDefault(c => c.Name == "Страна рекордсмен по съемкам");
             if (category != null)
             {
+                category.Films.Clear();
+
                 var res = _context.Countries.Include("Films").OrderByDescending(c => c.Films.Count()).FirstOrDefault();
                 if (res != null)
                 {
@@ -128,9 +137,11 @@ namespace FilmCataloger.Services
 
         private void CategoryRequest6()
         {
-            Categories category = _context.Categories.FirstOrDefault(c => c.Name == "Звезды Франции");
+            Categories category = _context.Categories.Include("Persons").FirstOrDefault(c => c.Name == "Звезды Франции");
             if (category != null)
             {
+                category.Persons.Clear();
+
                 var res = _context.Persons.Include("Сountry").Where(p => p.Сountry.Name == "Франция" && p.Gender == Gender.Мужской);
                 if (res != null)
                 {
@@ -141,9 +152,11 @@ namespace FilmCataloger.Services
 
         private void CategoryRequest7()
         {
-            Categories category = _context.Categories.FirstOrDefault(c => c.Name == "На все руки Актрисы");
+            Categories category = _context.Categories.Include("Persons").FirstOrDefault(c => c.Name == "На все руки Актрисы");
             if (category != null)
             {
+                category.Persons.Clear();
+
                 var res = _context.Persons.Include("Professions").Where(p => p.Professions.Contains(_context.Professions.FirstOrDefault(prof => prof.Name == "Актер")) && p.Professions.Count > 1 && p.Gender == Gender.Женский);
                 if (res != null)
                 {
@@ -154,9 +167,11 @@ namespace FilmCataloger.Services
 
         private void CategoryRequest9()
         {
-            Categories category = _context.Categories.FirstOrDefault(c => c.Name == "Звезды 1995");
+            Categories category = _context.Categories.Include("Persons").FirstOrDefault(c => c.Name == "Звезды 1995");
             if (category != null)
             {
+                category.Persons.Clear();
+
                 var res = _context.Persons.Include("Films").Where(p => p.Films.Any(f => f.Production.Year == 1995));
                 if (res != null)
                 {
@@ -167,9 +182,11 @@ namespace FilmCataloger.Services
 
         private void CategoryRequest10()
         {
-            Categories category = _context.Categories.FirstOrDefault(c => c.Name == "Сам себе режисер");
+            Categories category = _context.Categories.Include("Persons").FirstOrDefault(c => c.Name == "Сам себе режисер");
             if (category != null)
             {
+                category.Persons.Clear();
+
                 var res = _context.Persons.Include("Professions").Where(p => p.Professions.Contains(_context.Professions.FirstOrDefault(prof => prof.Name == "Режиссер")) && p.Professions.Contains(_context.Professions.FirstOrDefault(prof => prof.Name == "Актер")));
                 if (res != null)
                 {
