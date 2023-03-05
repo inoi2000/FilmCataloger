@@ -19,6 +19,13 @@ namespace FilmCataloger.Services
         private CategoryService()
         {
             _context = ContextService.context;
+            UpdateAllCatigories += CategoryRequest1;
+            UpdateAllCatigories += CategoryRequest2;
+            UpdateAllCatigories += CategoryRequest5;
+            UpdateAllCatigories += CategoryRequest6;
+            UpdateAllCatigories += CategoryRequest7;
+            UpdateAllCatigories += CategoryRequest9;
+            UpdateAllCatigories += CategoryRequest10;
         }
 
         private class CategoryServiceCreate
@@ -73,13 +80,7 @@ namespace FilmCataloger.Services
             }
 
             // перезаполнение категорий
-            UpdateAllCatigories += CategoryRequest1;
-            UpdateAllCatigories += CategoryRequest2;
-            UpdateAllCatigories += CategoryRequest5;
-            UpdateAllCatigories += CategoryRequest6;
-            UpdateAllCatigories += CategoryRequest7;
-            UpdateAllCatigories += CategoryRequest9;
-            UpdateAllCatigories += CategoryRequest10;
+            
             UpdateAllCatigories();
             _context.SaveChanges();
         }
@@ -89,12 +90,13 @@ namespace FilmCataloger.Services
             Categories category = _context.Categories.FirstOrDefault(c => c.Name == "Самый самый");
             if (category != null)
             {
-                var mostRatingFilm = _context.Films.OrderBy(f => f.IMDb).FirstOrDefault();
+                //самый высокий по рейтингу
+                var mostRatingFilm = _context.Films.OrderByDescending(f => f.IMDb).FirstOrDefault();
                 if (!category.Films.Contains(mostRatingFilm) && mostRatingFilm != null) { category.Films.Add(mostRatingFilm); }
-
-                var mostExpensiveFilm = _context.Films.OrderBy(f => f.IMDb).FirstOrDefault();
+                //самый высокий по сборам
+                var mostExpensiveFilm = _context.Films.Include("FurtherInfo_FK").OrderByDescending(f => f.FurtherInfo_FK.Fees).FirstOrDefault();
                 if (!category.Films.Contains(mostExpensiveFilm) && mostExpensiveFilm != null) { category.Films.Add(mostExpensiveFilm); }
-
+                //самый старый по дате выхода
                 var mostOlderFilm = _context.Films.OrderBy(f => f.Production).FirstOrDefault();
                 if (!category.Films.Contains(mostOlderFilm) && mostOlderFilm != null) { category.Films.Add(mostOlderFilm); }
             }

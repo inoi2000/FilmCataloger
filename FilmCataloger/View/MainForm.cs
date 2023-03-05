@@ -90,15 +90,5 @@ namespace FilmCataloger.View
             Categories category = CategoryService.Instance.GetObject(int.Parse(Category_listView.FocusedItem.ImageKey));
             new CategoryInfoForm(category).Show();
         }
-
-        private void Search_button_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void SearchPlus_button_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
