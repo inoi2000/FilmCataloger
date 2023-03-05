@@ -8,6 +8,7 @@
 - ADO.NET
 - Entity Framework (code first)
 - LINQ
+- async/await
 - SOLID
 
 Файлы проекта содержат резервную копию базы данных использованную при создании проекта (FilmCataloger.bak)
