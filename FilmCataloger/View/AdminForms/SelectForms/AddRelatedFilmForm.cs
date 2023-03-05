@@ -19,22 +19,26 @@ namespace FilmCataloger.View.AdminForms.CreateFilmForms
         {
             InitializeComponent();
             this.RelatedFilm_ListBox = RelatedFilm_ListBox;
+            Films_listView.DoubleClick += Films_listView_DoubleClick;
+            UpDateForm(this, EventArgs.Empty);
+        }
 
+        private async void UpDateForm(object sender, EventArgs e)
+        {
             ImageList filmsImagelist = new ImageList();
             try
             {
-                ViewService.FillingListView(FilmService.Instance.GetAllObjects(), Films_listView, filmsImagelist);
+                await ViewService.FillingListView(FilmService.Instance.GetAllObjects(), Films_listView, filmsImagelist);
             }
             catch (System.Net.WebException ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            Films_listView.DoubleClick += Films_listView_DoubleClick;
         }
 
-        private void Films_listView_DoubleClick(object sender, EventArgs e)
+        private async void Films_listView_DoubleClick(object sender, EventArgs e)
         {
-            Films film = FilmService.Instance.GetObject(int.Parse(Films_listView.FocusedItem.ImageKey));
+            Films film = await FilmService.Instance.GetObjectAsync(int.Parse(Films_listView.FocusedItem.ImageKey));
             if (RelatedFilm_ListBox.Items.Contains(film))
             {
                 MessageBox.Show($"Вы уже добавили {film.Name} в список");
@@ -45,7 +49,7 @@ namespace FilmCataloger.View.AdminForms.CreateFilmForms
             }
         }
 
-        private void Add_button_Click(object sender, EventArgs e)
+        private async void Add_button_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(Name_textBox.Text))
             {
@@ -53,7 +57,7 @@ namespace FilmCataloger.View.AdminForms.CreateFilmForms
             }
             else
             {
-                Films film = FilmService.Instance.GetObject(Name_textBox.Text);
+                Films film = await FilmService.Instance.GetObjectAsync(Name_textBox.Text);
                 if (film == null)
                 {
                     MessageBox.Show("Такой фильм еще не добавлен в приложение");

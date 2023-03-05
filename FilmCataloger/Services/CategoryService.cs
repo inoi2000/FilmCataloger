@@ -3,6 +3,7 @@ using FilmCataloger.Model;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data.Entity;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -60,7 +61,7 @@ namespace FilmCataloger.Services
             else return true;
         }
 
-        public void UpdateCatigories()
+        public async Task UpdateCatigoriesAsync()
         {
             try
             {
@@ -82,8 +83,8 @@ namespace FilmCataloger.Services
                 }
 
                 // перезаполнение категорий
-                UpdateAllCatigories();
-                _context.SaveChanges();
+                await Task.Run(UpdateAllCatigories);
+                await _context.SaveChangesAsync();
             }
             catch { }
         }

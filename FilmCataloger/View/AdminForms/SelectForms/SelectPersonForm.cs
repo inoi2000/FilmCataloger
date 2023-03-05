@@ -18,16 +18,21 @@ namespace FilmCataloger.View.AdminForms.SelectForms
         {
             InitializeComponent();
 
+            UpDateForm(this, EventArgs.Empty);
+            Persons_listView.DoubleClick += Persons_listView_DoubleClick;
+        }
+
+        private async void UpDateForm(object sender, EventArgs e)
+        {
             ImageList personsImagelist = new ImageList();
             try
             {
-                ViewService.FillingListView(PersonService.Instance.GetAllObjects(), Persons_listView, personsImagelist);
+                await ViewService.FillingListView(PersonService.Instance.GetAllObjects(), Persons_listView, personsImagelist);
             }
             catch (System.Net.WebException ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            Persons_listView.DoubleClick += Persons_listView_DoubleClick;
         }
 
         private void Persons_listView_DoubleClick(object sender, EventArgs e)

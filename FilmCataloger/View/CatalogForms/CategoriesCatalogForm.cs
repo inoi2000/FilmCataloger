@@ -1,4 +1,6 @@
-﻿using FilmCataloger.Services;
+﻿using FilmCataloger.Model;
+using FilmCataloger.Services;
+using FilmCataloger.View.InfoForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,10 +18,22 @@ namespace FilmCataloger.View.CatalogForms
         public CategoriesCatalogForm()
         {
             InitializeComponent();
+            UpDateForm(this, EventArgs.Empty);
+            Category_listView.DoubleClick += Category_listView_DoubleClick;
+        }
+
+        private void Category_listView_DoubleClick(object sender, EventArgs e)
+        {
+            Categories category = CategoryService.Instance.GetObject(int.Parse(Category_listView.FocusedItem.ImageKey));
+            new CategoryInfoForm(category).Show();
+        }
+
+        private async void UpDateForm(object sender, EventArgs e)
+        {
             ImageList categoryImagelist = new ImageList();
             try
             {
-                ViewService.FillingListView(CategoryService.Instance.GetAllObjects(), Category_listView, categoryImagelist);
+                await ViewService.FillingListView(CategoryService.Instance.GetAllObjects(), Category_listView, categoryImagelist);
             }
             catch (System.Net.WebException ex)
             {

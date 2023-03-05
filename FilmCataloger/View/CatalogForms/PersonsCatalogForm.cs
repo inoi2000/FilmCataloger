@@ -19,15 +19,7 @@ namespace FilmCataloger.View.CatalogForms
         public PersonsCatalogForm()
         {
             InitializeComponent();
-            ImageList personsImagelist = new ImageList();
-            try
-            {
-                ViewService.FillingListView(PersonService.Instance.GetAllObjects(), Persons_listView, personsImagelist);
-            }
-            catch (System.Net.WebException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            UpDateForm(this, EventArgs.Empty);
 
             Professions_comboBox.SelectedIndex = 0;
             Countries_comboBox.SelectedIndex = 0;
@@ -48,7 +40,20 @@ namespace FilmCataloger.View.CatalogForms
             Persons_listView.DoubleClick += Persons_listView_DoubleClick;
         }
 
-        private void SortPersons(object sender, EventArgs e)
+        private async void UpDateForm(object sender, EventArgs e)
+        {
+            ImageList personsImagelist = new ImageList();
+            try
+            {
+                await ViewService.FillingListView(PersonService.Instance.GetAllObjects(), Persons_listView, personsImagelist);
+            }
+            catch (System.Net.WebException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private async void SortPersons(object sender, EventArgs e)
         {
             IEnumerable<Persons> sortedPersons = PersonService.Instance.GetAllObjects();
 
@@ -82,7 +87,7 @@ namespace FilmCataloger.View.CatalogForms
             ImageList personsImagelist = new ImageList();
             try
             {
-                ViewService.FillingListView(sortedPersons.ToList(), Persons_listView, personsImagelist);
+                await ViewService.FillingListView(sortedPersons.ToList(), Persons_listView, personsImagelist);
             }
             catch (System.Net.WebException ex)
             {
@@ -96,7 +101,7 @@ namespace FilmCataloger.View.CatalogForms
             new PersonInfoForm(person).Show();
         }
 
-        private void Search_button_Click(object sender, EventArgs e)
+        private async void Search_button_Click(object sender, EventArgs e)
         {
             IEnumerable<Persons> searchedPersons = PersonService.Instance.GetAllObjects();
             searchedPersons = SearchService.NamePersonSearch(ref searchedPersons, SearchField_textBox.Text);
@@ -105,7 +110,7 @@ namespace FilmCataloger.View.CatalogForms
             ImageList personsImagelist = new ImageList();
             try
             {
-                ViewService.FillingListView(searchedPersons.ToList(), Persons_listView, personsImagelist);
+                await ViewService.FillingListView(searchedPersons.ToList(), Persons_listView, personsImagelist);
             }
             catch (System.Net.WebException ex)
             {

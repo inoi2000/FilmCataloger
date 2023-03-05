@@ -14,9 +14,12 @@ namespace FilmCataloger.View.InfoForms
 {
     public partial class FilmInfoForm : Form
     {
+        Films film;
         public FilmInfoForm(Films film)
         {
             InitializeComponent();
+
+            this.film = film;
 
             this.Text = film.Name;
 
@@ -36,23 +39,28 @@ namespace FilmCataloger.View.InfoForms
 
             Description_label.Text = film.FurtherInfo_FK.Description;
 
+            UpDateForm(this, EventArgs.Empty);
+
+        }
+
+        private async void UpDateForm(object sender, EventArgs e)
+        {
             ImageList personsImagelist = new ImageList();
             ImageList filmsImagelist = new ImageList();
             try
             {
-                ViewService.FillingListView(film.Persons, Persons_listView, personsImagelist);
-                ViewService.FillingListView(film.RelatedFilms, RelatedFilms_listView, filmsImagelist);
+                await ViewService.FillingListView(film.Persons, Persons_listView, personsImagelist);
+                await ViewService.FillingListView(film.RelatedFilms, RelatedFilms_listView, filmsImagelist);
             }
             catch (System.Net.WebException ex)
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
 
-        private void RelatedFilms_listView_DoubleClick(object sender, EventArgs e)
+        private async void RelatedFilms_listView_DoubleClick(object sender, EventArgs e)
         {
-            Films film = FilmService.Instance.GetObject(int.Parse(RelatedFilms_listView.FocusedItem.ImageKey));
+            Films film = await FilmService.Instance.GetObjectAsync(int.Parse(RelatedFilms_listView.FocusedItem.ImageKey));
             new FilmInfoForm(film).Show();
         }
 

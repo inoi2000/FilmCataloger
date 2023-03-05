@@ -1,6 +1,7 @@
 ﻿using FilmCataloger.Model;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,9 +38,19 @@ namespace FilmCataloger.Services
             return _context.Films.Include("FurtherInfo_FK").Include("Persons").Include("Genres").Include("Countries").FirstOrDefault(film => film.Id == id);
         }
 
+        public async Task<Films> GetObjectAsync(int id)
+        {
+            return await _context.Films.Include("FurtherInfo_FK").Include("Persons").Include("Genres").Include("Countries").FirstOrDefaultAsync(film => film.Id == id);
+        }
+
         public Films GetObject(string Name)
         {
             return _context.Films.Include("FurtherInfo_FK").Include("Persons").Include("Genres").Include("Countries").FirstOrDefault(film => film.Name == Name);
+        }
+
+        public async Task<Films> GetObjectAsync(string Name)
+        {
+            return await _context.Films.Include("FurtherInfo_FK").Include("Persons").Include("Genres").Include("Countries").FirstOrDefaultAsync(film => film.Name == Name);
         }
 
         public bool ChangeObgest(Films mainFilm, Films changeFilm)

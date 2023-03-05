@@ -34,7 +34,7 @@ namespace FilmCataloger.View.SearchForms
 
         }
 
-        private void StartSearch_button_Click(object sender, EventArgs e)
+        private async void StartSearch_button_Click(object sender, EventArgs e)
         {
             IEnumerable<Persons> searchPerson = PersonService.Instance.GetAllObjects();
             if (Name_checkBox.Checked)
@@ -77,7 +77,7 @@ namespace FilmCataloger.View.SearchForms
                 ImageList personsImagelist = new ImageList();
                 try
                 {
-                    ViewService.FillingListView(searchPerson.ToList(), persons_ListView, personsImagelist);
+                    await ViewService.FillingListView(searchPerson.ToList(), persons_ListView, personsImagelist);
                 }
                 catch (System.Net.WebException ex)
                 {

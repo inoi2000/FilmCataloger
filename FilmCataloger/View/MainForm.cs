@@ -29,9 +29,9 @@ namespace FilmCataloger.View
             UpdateData();
         }
 
-        private void UpdateData()
+        private async void UpdateData()
         {
-            CategoryService.Instance.UpdateCatigories();
+            await CategoryService.Instance.UpdateCatigoriesAsync();
 
             Persons_listView.Items.Clear();
             Films_listView.Items.Clear();
@@ -42,9 +42,9 @@ namespace FilmCataloger.View
             ImageList categoryImagelist = new ImageList();
             try
             {
-                ViewService.FillingListView(PersonService.Instance.GetAllObjects(), Persons_listView, personsImagelist);
-                ViewService.FillingListView(FilmService.Instance.GetAllObjects(), Films_listView, filmsImagelist);
-                ViewService.FillingListView(CategoryService.Instance.GetAllObjects(), Category_listView, categoryImagelist);
+                await ViewService.FillingListView(PersonService.Instance.GetAllObjects(), Persons_listView, personsImagelist);
+                await ViewService.FillingListView(FilmService.Instance.GetAllObjects(), Films_listView, filmsImagelist);
+                await ViewService.FillingListView(CategoryService.Instance.GetAllObjects(), Category_listView, categoryImagelist);
             }
             catch (System.Net.WebException ex)
             {
@@ -73,9 +73,9 @@ namespace FilmCataloger.View
             this.Visible = true;
         }
 
-        private void Films_listView_DoubleClick(object sender, EventArgs e)
+        private async void Films_listView_DoubleClick(object sender, EventArgs e)
         {
-            Films film = FilmService.Instance.GetObject(int.Parse(Films_listView.FocusedItem.ImageKey));
+            Films film = await FilmService.Instance.GetObjectAsync(int.Parse(Films_listView.FocusedItem.ImageKey));
             new FilmInfoForm(film).Show();
         }
 

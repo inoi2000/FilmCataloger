@@ -20,15 +20,7 @@ namespace FilmCataloger.View.CatalogForms
         public FilmsCatalogForm()
         {
             InitializeComponent();
-            ImageList filmsImagelist = new ImageList();
-            try
-            {
-                ViewService.FillingListView(FilmService.Instance.GetAllObjects(), Films_listView, filmsImagelist);
-            }
-            catch (System.Net.WebException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            UpDateForm(this, EventArgs.Empty);
 
             Genres_comboBox.SelectedIndex = 0;
             Countries_comboBox.SelectedIndex = 0;
@@ -49,7 +41,20 @@ namespace FilmCataloger.View.CatalogForms
             CountryService.Instance.GetAllObjects().ToList().ForEach(obj => { Countries_comboBox.Items.Add(obj); });
         }
 
-        private void SortFilm(object sender, EventArgs e)
+        private async void UpDateForm(object sender, EventArgs e)
+        {
+            ImageList filmsImagelist = new ImageList();
+            try
+            {
+                await ViewService.FillingListView(FilmService.Instance.GetAllObjects(), Films_listView, filmsImagelist);
+            }
+            catch (System.Net.WebException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private async void SortFilm(object sender, EventArgs e)
         {
             IEnumerable<Films> sortedFilms = FilmService.Instance.GetAllObjects();
 
@@ -124,7 +129,7 @@ namespace FilmCataloger.View.CatalogForms
             ImageList filmsImagelist = new ImageList();
             try
             {
-                ViewService.FillingListView(sortedFilms.ToList(), Films_listView, filmsImagelist);
+                await ViewService.FillingListView(sortedFilms.ToList(), Films_listView, filmsImagelist);
             }
             catch (System.Net.WebException ex)
             {
@@ -132,9 +137,9 @@ namespace FilmCataloger.View.CatalogForms
             }
         }
 
-        private void Films_listView_DoubleClick(object sender, EventArgs e)
+        private async void Films_listView_DoubleClick(object sender, EventArgs e)
         {
-            Films film = FilmService.Instance.GetObject(int.Parse(Films_listView.FocusedItem.ImageKey));
+            Films film = await FilmService.Instance.GetObjectAsync(int.Parse(Films_listView.FocusedItem.ImageKey));
             new FilmInfoForm(film).Show();
         }
 
@@ -143,7 +148,7 @@ namespace FilmCataloger.View.CatalogForms
             new FilmSearchForm(ref Films_listView).ShowDialog();
         }
 
-        private void Search_button_Click(object sender, EventArgs e)
+        private async void Search_button_Click(object sender, EventArgs e)
         {
             IEnumerable<Films> searchedFilms = FilmService.Instance.GetAllObjects();
             searchedFilms = SearchService.NameFilmSearch(ref searchedFilms, SearchField_textBox.Text);
@@ -152,7 +157,7 @@ namespace FilmCataloger.View.CatalogForms
             ImageList filmsImagelist = new ImageList();
             try
             {
-                ViewService.FillingListView(searchedFilms.ToList(), Films_listView, filmsImagelist);
+                await ViewService.FillingListView(searchedFilms.ToList(), Films_listView, filmsImagelist);
             }
             catch (System.Net.WebException ex)
             {
